@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">ElPastillero</string>
     <string name="creado">Creado por Sergio Manzanera Pérez</string>
+    <string name="check">Check</string>
+    <string name="restaurar">Restaurar</string>
+    <string name="m_s">Más</string>
+    <string name="_0">0</string>
+    <string name="n_de_pastillas">Nª de pastillas</string>
+    <string name="pr_ctica_2">Práctica_2</string>
+    <string name="practica_2">Segunda</string>
+    <string name="Segunda_practica">Practica_2</string>
+    <string name="menos">menos</string>
+    <string name="mas">mas</string>
+    <string name="cero">0</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_4">4</string>
+    <string name="_3">3</string>
+    <string name="_5">5</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_7">7</string>
+    <string name="ç">6</string>
+    <string name="la_tecla_que_has_tocaco_es">La tecla que has tocaco es:</string>
 </resources>

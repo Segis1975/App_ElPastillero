@@ -6,35 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<Button
-    android:id="@+id/btnCheck"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Check"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toTopOf="@+id/textView1"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/btnCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/check"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Nª de pastillas"
+        android:text="@string/n_de_pastillas"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/incre"
         app:layout_constraintEnd_toStartOf="@+id/contador"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCheck"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/contador"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="0"
+        android:text="@string/_0"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +48,7 @@
         android:id="@+id/incre"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Más"
+        android:text="@string/m_s"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reset"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,11 +58,36 @@
     <Button
         android:id="@+id/reset"
         android:layout_width="108dp"
-        android:layout_height="47dp"
-        android:text="Restaurar"
+        android:layout_height="48dp"
+        android:text="@string/restaurar"
         app:layout_constraintBottom_toBottomOf="@+id/incre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/incre"
-        app:layout_constraintTop_toTopOf="@+id/incre" />
+        app:layout_constraintTop_toTopOf="@+id/incre"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/pratica2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="@string/Segunda_practica"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPractica3"
+        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incre"
+        app:layout_constraintVertical_bias="0.847" />
+
+    <Button
+        android:id="@+id/btnPractica3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:text="Práctica 3"
+        app:layout_constraintBottom_toBottomOf="@+id/pratica2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pratica2"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

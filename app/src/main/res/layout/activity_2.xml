@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_2">
+
+    <Button
+        android:id="@+id/menos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/menos"
+        app:layout_constraintBottom_toTopOf="@+id/txtVacio"
+        app:layout_constraintEnd_toStartOf="@+id/contador2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/mas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:text="@string/mas"
+        app:layout_constraintBottom_toBottomOf="@+id/contador2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/contador2"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <TextView
+        android:id="@+id/contador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/menos"
+        app:layout_constraintEnd_toStartOf="@+id/mas"
+        app:layout_constraintTop_toTopOf="@+id/menos"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <EditText
+        android:id="@+id/txtVacio"
+        android:layout_width="157dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="44dp"
+        android:ems="10"
+        android:hint="Texto aquí"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/txtInsertado"
+        app:layout_constraintEnd_toStartOf="@+id/ponerTexto"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ponerTexto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:text="Poner texto"
+        app:layout_constraintBottom_toBottomOf="@+id/txtVacio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtVacio" />
+
+    <TextView
+        android:id="@+id/txtInsertado"
+        android:layout_width="320dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="64dp"
+        android:text="TextView"
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toTopOf="@+id/checkB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="132dp"
+        android:text="Pulsa el botín"
+        app:layout_constraintBottom_toTopOf="@+id/volver"
+        app:layout_constraintEnd_toStartOf="@+id/btnChec"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChec"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="56dp"
+        android:enabled="false"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/checkB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkB"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Volver atrás"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

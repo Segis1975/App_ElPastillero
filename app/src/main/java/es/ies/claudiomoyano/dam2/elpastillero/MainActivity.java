@@ -1,10 +1,10 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -31,8 +31,23 @@ public class MainActivity extends AppCompatActivity {
                 numero++;
                 cont.setText(String.valueOf(numero));
         });
-        acero.setOnClickListener(v->{
-            cont.setText(String.valueOf(0));
+        acero.setOnClickListener(v->
+                cont.setText(String.valueOf(0))
+        );
+        Button practica2 = findViewById(R.id.pratica2);
+
+        practica2.setOnClickListener(v->{
+            Intent actividad2 = new Intent(this, Activity_2.class);
+            startActivity(actividad2);
+
         });
+
+        Button practica3 = findViewById(R.id.btnPractica3);
+        practica3.setOnClickListener(v->{
+            Intent actividad3 = new Intent(this, Activity_3.class);
+            startActivity(actividad3);
+        });
+
     }
+
 }
