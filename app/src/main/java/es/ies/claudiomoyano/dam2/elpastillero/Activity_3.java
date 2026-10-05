@@ -1,7 +1,10 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +25,7 @@ public class Activity_3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_actiivdad3);
+        setContentView(R.layout.activity3);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -48,7 +51,20 @@ public class Activity_3 extends AppCompatActivity {
         bt8.setOnClickListener(v-> ponerTexto("Has tocado el número 8"));
         Button bt9 = findViewById(R.id.btn9);
         bt9.setOnClickListener(v-> ponerTexto("Has tocado el número 9"));
-
-
+        EditText nPastillas = findViewById(R.id.nPastillas);
+        nPastillas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus){
+                    String cadena = nPastillas.getText().toString();
+                    int n = Integer.parseInt(cadena);
+                    if (n<1 || n>10){
+                        nPastillas.setBackgroundColor(Color.RED);
+                    }else{
+                        nPastillas.setBackgroundColor(Color.WHITE);
+                    }
+                }
+            }
+        });
     }
 }
