@@ -8,16 +8,6 @@
     tools:context=".Activity_3">
 
 
-    <TextView
-        android:id="@+id/textotecla"
-        android:layout_width="202dp"
-        android:layout_height="27dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.411"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/btn3"
         android:layout_width="53dp"
@@ -163,11 +153,10 @@
         android:id="@+id/textView3"
         android:layout_width="202dp"
         android:layout_height="27dp"
-        android:layout_marginBottom="20dp"
         android:text="La tecla que has tocado es: "
-        app:layout_constraintBottom_toTopOf="@+id/textotecla"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn8"
         tools:ignore="TextSizeCheck" />
 
     <TextView
