@@ -7,22 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Activity_3">
 
-
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#4CAF50"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/_3"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn2"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btn1"
         android:layout_width="53dp"
@@ -33,9 +17,9 @@
         android:text="@string/_1"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn4"
-        app:layout_constraintEnd_toStartOf="@+id/btn2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn2"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
@@ -48,11 +32,26 @@
         android:text="@string/_2"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn5"
-        app:layout_constraintEnd_toStartOf="@+id/btn3"
-        app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintBottom_toTopOf="@id/btn5"
+        app:layout_constraintLeft_toRightOf="@id/btn1"
+        app:layout_constraintRight_toLeftOf="@id/btn3"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#4CAF50"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/_3"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/btn6"
+        app:layout_constraintLeft_toRightOf="@id/btn2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <Button
@@ -64,13 +63,11 @@
         android:padding="10dp"
         android:text="@string/_4"
         android:textColor="@color/black"
-
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn1"
-        app:layout_constraintEnd_toStartOf="@id/btn5"
         app:layout_constraintBottom_toTopOf="@id/btn7"
-        tools:layout_editor_absoluteY="101dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn5"
+        app:layout_constraintTop_toBottomOf="@id/btn1"/>
 
     <Button
         android:id="@+id/btn5"
@@ -82,11 +79,11 @@
         android:text="@string/_5"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn8"
-        app:layout_constraintStart_toEndOf="@id/btn4"
-        app:layout_constraintEnd_toStartOf="@id/btn6"
-        app:layout_constraintTop_toBottomOf="@id/btn2"
-        tools:layout_editor_absoluteX="95dp" />
+        app:layout_constraintBottom_toTopOf="@id/btn8"
+        app:layout_constraintLeft_toRightOf="@id/btn4"
+        app:layout_constraintRight_toLeftOf="@id/btn6"
+        app:layout_constraintTop_toBottomOf="@id/btn2"/>
+
 
     <Button
         android:id="@+id/btn6"
@@ -95,13 +92,14 @@
         android:backgroundTint="#4CAF50"
         android:gravity="center"
         android:padding="10dp"
-        android:text="@string/ç"
+        android:text="6"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn5"
+        app:layout_constraintBottom_toTopOf="@id/btn9"
+        app:layout_constraintLeft_toRightOf="@id/btn5"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn3"/>
+
 
     <Button
         android:id="@+id/btn7"
@@ -113,10 +111,10 @@
         android:text="@string/_7"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/btn8"
-        app:layout_constraintTop_toBottomOf="@id/btn4"
-        app:layout_constraintBottom_toTopOf="@id/textView3"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@id/teclaPulsada"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn8"
+        app:layout_constraintTop_toBottomOf="@id/btn4"/>
 
     <Button
         android:id="@+id/btn8"
@@ -128,11 +126,11 @@
         android:text="@string/_8"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btn5"
-        app:layout_constraintBottom_toTopOf="@id/textView3"
-        app:layout_constraintStart_toEndOf="@id/btn7"
-        app:layout_constraintEnd_toStartOf="@id/btn9"
-        />
+        app:layout_constraintBottom_toTopOf="@id/teclaPulsada"
+        app:layout_constraintLeft_toRightOf="@id/btn7"
+        app:layout_constraintRight_toLeftOf="@id/btn9"
+        app:layout_constraintTop_toBottomOf="@id/btn5"/>
+
 
     <Button
         android:id="@+id/btn9"
@@ -144,43 +142,52 @@
         android:text="@string/_9"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/teclaPulsada"
+        app:layout_constraintLeft_toRightOf="@id/btn8"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn6"
-        app:layout_constraintBottom_toTopOf="@id/textView3"
-        app:layout_constraintStart_toEndOf="@id/btn8"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="202dp"
-        android:layout_height="27dp"
-        android:text="La tecla que has tocado es: "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn8"
-        tools:ignore="TextSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="287dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="28dp"
-        android:text="Introduce el número de pastillas a tomar: "
-        app:layout_constraintBottom_toTopOf="@+id/nPastillas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextSizeCheck" />
-
-    <EditText
-        android:id="@+id/nPastillas"
+        android:id="@+id/teclaPulsada"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="264dp"
+        android:text="Pulsa una letra"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/txtnumero"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn8" />
+
+    <TextView
+        android:id="@+id/labelnumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce un número:"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="673dp"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/teclaPulsada"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/txtnumero"
+        />
+
+    <EditText
+        android:id="@+id/txtnumero"
+        android:layout_width="172dp"
+        android:layout_height="49dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="txtnumero"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="659dp"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/teclaPulsada"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/labelnumero"
+
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

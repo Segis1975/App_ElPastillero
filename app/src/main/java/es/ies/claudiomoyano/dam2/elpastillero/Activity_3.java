@@ -16,10 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Activity_3 extends AppCompatActivity {
 
-    public void ponerTexto(String txt){
-        TextView texto = findViewById(R.id.textotecla);
-        texto.setText(txt);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,40 +28,42 @@ public class Activity_3 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Button bt1 = findViewById(R.id.btn1);
-        bt1.setOnClickListener(v->{
-            ponerTexto("Has tocado a la tecla 1");
+        TextView ponerTexto= findViewById(R.id.teclaPulsada);
+        Button btn1 = findViewById(R.id.btn1);
+        btn1.setOnClickListener(v->{
+                ponerTexto.setText("Has pulsado la tecla 1");
         });
-        Button bt2 = findViewById(R.id.btn2);
-        bt2.setOnClickListener(v-> ponerTexto("Has tocado el número 2"));
-        Button bt3 = findViewById(R.id.btn3);
-        bt3.setOnClickListener(v-> ponerTexto("Has tocado el número 3"));
-        Button bt4 = findViewById(R.id.btn4);
-        bt4.setOnClickListener(v-> ponerTexto("Has tocado el número 4"));
-        Button bt5 = findViewById(R.id.btn5);
-        bt5.setOnClickListener(v-> ponerTexto("Has tocado el número 5"));
-        Button bt6 = findViewById(R.id.btn6);
-        bt6.setOnClickListener(v-> ponerTexto("Has tocado el número 6"));
-        Button bt7 = findViewById(R.id.btn7);
-        bt7.setOnClickListener(v-> ponerTexto("Has tocado el número 7"));
-        Button bt8 = findViewById(R.id.btn8);
-        bt8.setOnClickListener(v-> ponerTexto("Has tocado el número 8"));
-        Button bt9 = findViewById(R.id.btn9);
-        bt9.setOnClickListener(v-> ponerTexto("Has tocado el número 9"));
-        EditText nPastillas = findViewById(R.id.nPastillas);
-        nPastillas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus){
-                    String cadena = nPastillas.getText().toString();
-                    int n = Integer.parseInt(cadena);
-                    if (n<1 || n>10){
-                        nPastillas.setBackgroundColor(Color.RED);
-                    }else{
-                        nPastillas.setBackgroundColor(Color.WHITE);
-                    }
-                }
-            }
+        Button btn2 = findViewById(R.id.btn2);
+        btn2.setOnClickListener(v-> {
+            ponerTexto.setText("Has pulsado la tecla 2");
+        });
+        Button btn3 = findViewById(R.id.btn3);
+        btn3.setOnClickListener(v-> {
+            ponerTexto.setText("Has pulsado la tecla 3");
+        });
+        Button btn4 = findViewById(R.id.btn4);
+        btn4.setOnClickListener(v-> {
+            ponerTexto.setText("Has pulsado la tecla 4");
+        });
+        Button btn5 = findViewById(R.id.btn5);
+        btn5.setOnClickListener(v-> {
+                    ponerTexto.setText("Has pulsado la tecla 5");
+        });
+        Button btn6 = findViewById(R.id.btn6);
+        btn6.setOnClickListener(v-> {
+            ponerTexto.setText("Has pulsado la tecla 6");
+        });
+        Button btn7 = findViewById(R.id.btn7);
+        btn6.setOnClickListener(v-> {
+            ponerTexto.setText("Has pulsado la tecla 7");
+        });
+        Button btn8 = findViewById(R.id.btn8);
+        btn8.setOnClickListener(v-> {
+            ponerTexto.setText("Has pulsado la tecla 8");
+        });
+        Button btn9 = findViewById(R.id.btn9);
+        btn9.setOnClickListener(v -> {
+                ponerTexto.setText("Has pulsado la tecla 9");
         });
     }
 }
