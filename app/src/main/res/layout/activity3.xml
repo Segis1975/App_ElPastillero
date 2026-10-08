@@ -168,7 +168,7 @@
         tools:layout_editor_absoluteX="43dp"
         tools:layout_editor_absoluteY="673dp"
         app:layout_constraintTop_toBottomOf="@id/teclaPulsada"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/grupobtn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/txtnumero"
         />
@@ -179,15 +179,73 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="text"
-        android:text="txtnumero"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="659dp"
-        app:layout_constraintTop_toBottomOf="@id/teclaPulsada"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/grupobtn"
         app:layout_constraintLeft_toRightOf="@id/labelnumero"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/teclaPulsada"/>
 
-        />
+    <RadioGroup
+        android:id="@+id/grupobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtnumero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnLimpiar"
+        android:orientation="horizontal"
+        >
+    <RadioButton
+            android:id="@+id/rbSi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Si"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="671dp"
+            app:layout_constraintTop_toBottomOf="@id/txtnumero"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rbNo"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
+        <RadioButton
+            android:id="@+id/rbNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="671dp"
+            app:layout_constraintTop_toBottomOf="@id/txtnumero"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rbVeces"
+            app:layout_constraintStart_toEndOf="@id/rbSi"/>
+
+
+        <RadioButton
+            android:id="@+id/rbVeces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A veces"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="671dp"
+            app:layout_constraintTop_toBottomOf="@id/txtnumero"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnLimpiar"
+            app:layout_constraintStart_toEndOf="@id/rbNo"        />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpiar"
+        tools:layout_editor_absoluteX="324dp"
+        tools:layout_editor_absoluteY="669dp"
+        app:layout_constraintTop_toBottomOf="@id/txtnumero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/grupobtn"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

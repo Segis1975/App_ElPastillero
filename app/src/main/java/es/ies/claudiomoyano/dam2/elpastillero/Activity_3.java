@@ -2,9 +2,13 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,6 +68,33 @@ public class Activity_3 extends AppCompatActivity {
         Button btn9 = findViewById(R.id.btn9);
         btn9.setOnClickListener(v -> {
                 ponerTexto.setText("Has pulsado la tecla 9");
+        });
+        EditText numero = findViewById(R.id.txtnumero);
+        numero.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                try{
+                    int n = Integer.parseInt(numero.getText().toString());
+                    if (n>0 && n<11){
+                        numero.setText("");
+                        numero.setBackgroundColor(Color.WHITE);
+                    }
+                    else {
+                        numero.setBackgroundColor(Color.RED);
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+        RadioButton rbSi = findViewById(R.id.rbSi);
+        RadioButton rbNo = findViewById(R.id.rbNo);
+        RadioButton rbVeces = findViewById(R.id.rbVeces);
+        RadioGroup grupoBotones = findViewById(R.id.grupobtn);
+
+        Button limpiar = findViewById(R.id.btnLimpiar);
+        limpiar.setOnClickListener(v->{
+
+            grupoBotones.clearCheck();
         });
     }
 }
