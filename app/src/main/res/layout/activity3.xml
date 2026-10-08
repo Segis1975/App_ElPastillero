@@ -155,7 +155,7 @@
         android:text="Pulsa una letra"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/txtnumero"
+        app:layout_constraintBottom_toTopOf="@id/labelnumero"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn8" />
@@ -167,10 +167,10 @@
         android:text="Introduce un número:"
         tools:layout_editor_absoluteX="43dp"
         tools:layout_editor_absoluteY="673dp"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/teclaPulsada"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/txtnumero"
+        app:layout_constraintTop_toBottomOf="@id/teclaPulsada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/txtnumero"
         />
 
     <EditText
@@ -182,10 +182,10 @@
         android:text="txtnumero"
         tools:layout_editor_absoluteX="195dp"
         tools:layout_editor_absoluteY="659dp"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/teclaPulsada"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/labelnumero"
+        app:layout_constraintTop_toBottomOf="@id/teclaPulsada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/labelnumero"
+        app:layout_constraintRight_toRightOf="parent"
 
         />
 
