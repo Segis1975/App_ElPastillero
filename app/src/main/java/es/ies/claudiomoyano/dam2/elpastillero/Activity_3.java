@@ -96,5 +96,9 @@ public class Activity_3 extends AppCompatActivity {
 
             grupoBotones.clearCheck();
         });
+        Button inicio = findViewById(R.id.btnInicio);
+        inicio.setOnClickListener(v->
+                finish()
+        );
     }
 }
