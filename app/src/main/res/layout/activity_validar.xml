@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Validar">
+
+    <TextView
+        android:id="@+id/horaToma"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/cantidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbHora"
+        app:layout_constraintTop_toBottomOf="@id/dosis" />
+
+    <TextView
+        android:id="@+id/fin"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/btnValidar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbFechaI2"
+        app:layout_constraintTop_toBottomOf="@id/inicio" />
+
+    <TextView
+        android:id="@+id/inicio"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/lbFechaI2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbFechaI"
+        app:layout_constraintTop_toBottomOf="@id/cantidad" />
+
+    <TextView
+        android:id="@+id/lbHora"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Hora toma:"
+        app:layout_constraintBottom_toTopOf="@id/lbcantidad"
+        app:layout_constraintEnd_toStartOf="@id/horaToma"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbDosis" />
+
+    <TextView
+        android:id="@+id/lbCategoría"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Categoría del medicamento"
+        app:layout_constraintBottom_toTopOf="@id/lbLaboratorio"
+        app:layout_constraintEnd_toStartOf="@id/categoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblNMe" />
+
+    <TextView
+        android:id="@+id/categoria"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/laboratorio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbCategoría"
+        app:layout_constraintTop_toBottomOf="@id/nombre" />
+
+    <TextView
+        android:id="@+id/lblNMe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Nombre del medicamento"
+        app:layout_constraintBottom_toTopOf="@id/lbCategoría"
+        app:layout_constraintEnd_toStartOf="@id/nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/categoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lblNMe"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbLaboratorio"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Es del laboratorio:"
+        app:layout_constraintBottom_toTopOf="@id/lbDosis"
+        app:layout_constraintEnd_toStartOf="@id/laboratorio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbCategoría" />
+
+    <TextView
+        android:id="@+id/laboratorio"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/dosis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbLaboratorio"
+        app:layout_constraintTop_toBottomOf="@id/categoria" />
+
+    <TextView
+        android:id="@+id/dosis"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:gravity="center_vertical"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/horaToma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbDosis"
+        app:layout_constraintTop_toBottomOf="@id/laboratorio" />
+
+    <TextView
+        android:id="@+id/lbDosis"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Dosis: "
+        app:layout_constraintBottom_toTopOf="@id/lbHora"
+        app:layout_constraintEnd_toStartOf="@id/dosis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbLaboratorio" />
+
+    <TextView
+        android:id="@+id/lbcantidad"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Cantidad:"
+        app:layout_constraintBottom_toTopOf="@id/lbFechaI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbHora"
+        app:layout_constraintEnd_toStartOf="@id/cantidad"/>
+
+    <TextView
+        android:id="@+id/cantidad"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@id/inicio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbcantidad"
+        app:layout_constraintTop_toBottomOf="@id/horaToma" />
+
+    <TextView
+        android:id="@+id/lbFechaI"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Fecha de inicio:"
+        app:layout_constraintBottom_toTopOf="@id/lbFechaI2"
+        app:layout_constraintEnd_toStartOf="@id/inicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbcantidad" />
+
+    <TextView
+        android:id="@+id/lbFechaI2"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Fecha de fin:"
+        app:layout_constraintBottom_toTopOf="@id/btnValidar"
+        app:layout_constraintEnd_toStartOf="@id/fin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbFechaI" />
+
+    <Button
+        android:id="@+id/btnValidar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver a la pantalla primera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbFechaI2"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

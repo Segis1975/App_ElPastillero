@@ -47,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
             Intent actividad3 = new Intent(this, Activity_3.class);
             startActivity(actividad3);
         });
+        Button practica4 = findViewById(R.id.btnPractica4);
+        practica4.setOnClickListener(v->{
+            Intent actividad4 = new Intent(this, Actiivity4.class);
+            startActivity(actividad4);
+        });
 
     }
 
