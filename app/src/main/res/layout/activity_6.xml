@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity6">
+
+    <Button
+        android:id="@+id/paginaWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Página Web"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/acercaDE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/acercaDE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A cerca de ..."
+        app:layout_constraintTop_toBottomOf="@id/paginaWeb"
+        app:layout_constraintBottom_toTopOf="@id/Compartir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/volverP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver atrás"
+        app:layout_constraintTop_toBottomOf="@id/Compartir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/Compartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compartir por WhatsApp"
+        app:layout_constraintTop_toBottomOf="@id/acercaDE"
+        app:layout_constraintBottom_toTopOf="@id/volverP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

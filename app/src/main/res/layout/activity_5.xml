@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actiivty5">
+    tools:context=".Activity5">
 
     <Button
         android:id="@+id/btnToma"
@@ -41,5 +41,6 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnInvitacion" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

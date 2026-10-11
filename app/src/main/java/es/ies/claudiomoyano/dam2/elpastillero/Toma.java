@@ -9,7 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class toma extends AppCompatActivity {
+public class Toma extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class toma extends AppCompatActivity {
             return insets;
         });
         Button si = findViewById(R.id.btnSi);
-        si.setOnClickListener(v->{
+        si.setOnClickListener(v ->{
             setResult(RESULT_OK);
             finish();
         });

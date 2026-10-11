@@ -3,8 +3,9 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 cont.setText(String.valueOf(0))
         );
         Button practica2 = findViewById(R.id.btnPractica2);
+
         practica2.setOnClickListener(v->{
             Intent actividad2 = new Intent(this, Activity_2.class);
             startActivity(actividad2);
@@ -53,8 +55,13 @@ public class MainActivity extends AppCompatActivity {
         });
         Button practica5 = findViewById(R.id.btnPractica5);
         practica5.setOnClickListener(v->{
-            Intent actividad5 =  new Intent(this, Actiivty5.class);
+            Intent actividad5 = new Intent(this, Activity5.class);
             startActivity(actividad5);
+        });
+        Button practica6 = findViewById(R.id.btnPractica6);
+        practica6.setOnClickListener(v->{
+            Intent actividad6 = new Intent(this, Activity6.class);
+            startActivity(actividad6);
         });
     }
 

@@ -8,38 +8,38 @@
     tools:context=".Invitacion">
 
     <TextView
-        android:id="@+id/lbEMail"
+        android:id="@+id/lbCorreo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Correo Electónico"
+        android:text="Correo electrónico:"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/lbAsunto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/email"
-
-    />
+        app:layout_constraintEnd_toStartOf="@id/correo"
+        />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
+        android:text="Name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/asunto"
-        app:layout_constraintStart_toEndOf="@id/lbEMail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbCorreo"
         />
-
     <TextView
         android:id="@+id/lbAsunto"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Asunto:"
-        app:layout_constraintTop_toBottomOf="@id/lbEMail"
-        app:layout_constraintBottom_toTopOf="@id/lbMensaje"
+        android:text="Asunto: "
+        app:layout_constraintBottom_toTopOf="@id/lbmensaje"
+        app:layout_constraintTop_toBottomOf="@id/lbCorreo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/asunto"/>
+        app:layout_constraintEnd_toStartOf="@id/asunto"
+        />
 
     <EditText
         android:id="@+id/asunto"
@@ -47,51 +47,45 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Deseo que pruebes esta APP"
-        app:layout_constraintTop_toBottomOf="@id/email"
-        app:layout_constraintBottom_toTopOf="@id/lbMensaje"
+        android:text="Me gustaría que empezaras a usar esta APP"
         app:layout_constraintStart_toEndOf="@id/lbAsunto"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/correo"
+        app:layout_constraintBottom_toTopOf="@id/mensaje"
+        />
+
     <TextView
-        android:id="@+id/lbMensaje"
+        android:id="@+id/lbmensaje"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Mensaje:"
-        app:layout_constraintTop_toBottomOf="@id/lbAsunto"
-        app:layout_constraintBottom_toTopOf="@id/btnenvias"
+        android:layout_height="150dp"
+        android:gravity="center_vertical"
+        android:text="Mensaje"
+        app:layout_constraintBottom_toTopOf="@id/btnEnviar"
+        app:layout_constraintEnd_toStartOf="@id/mensaje"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Mensaje"/>
+        app:layout_constraintTop_toBottomOf="@id/lbAsunto" />
 
     <EditText
-        android:id="@+id/Mensaje"
+        android:id="@+id/mensaje"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:ems="10"
+        android:gravity="center_vertical"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/asunto"
-        app:layout_constraintBottom_toTopOf="@id/btnenvias"
-        app:layout_constraintStart_toEndOf="@id/lbMensaje"
+        app:layout_constraintBottom_toTopOf="@id/btnEnviar"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toEndOf="@id/lbmensaje"
+        app:layout_constraintTop_toBottomOf="@id/asunto" />
 
     <Button
-        android:id="@+id/btnenvias"
+        android:id="@+id/btnEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:text="Enviar"
-        app:layout_constraintTop_toBottomOf="@id/lbMensaje"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnVolver"
-        />
-
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnenvias"
-        app:layout_constraintTop_toBottomOf="@id/lbMensaje" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mensaje" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,17 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".toma">
+    tools:context=".Toma">
 
     <TextView
-        android:id="@+id/texto"
+        android:id="@+id/textoToma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Es la hora de  tomar una aspirina ¿Te la Tomastes?"
+        android:text="Te has tomado la aspirina que te tocaba?"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btnSi"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <Button
@@ -23,20 +23,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Si"
-        app:layout_constraintTop_toBottomOf="@id/texto"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnNo"
-        />
-
+        app:layout_constraintTop_toBottomOf="@id/textoToma"
+        app:layout_constraintBottom_toBottomOf="parent"
+    />
     <Button
         android:id="@+id/btnNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No"
-        app:layout_constraintTop_toBottomOf="@id/texto"
+        app:layout_constraintTop_toBottomOf="@id/textoToma"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnSi"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

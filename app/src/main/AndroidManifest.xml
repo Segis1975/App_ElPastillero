@@ -42,11 +42,23 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Actiivty5"
+            android:name=".Activity6"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".toma"
+            android:name=".Compartir"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".AcercaDe"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Activity5"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Toma"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
