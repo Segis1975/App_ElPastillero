@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Invitacion">
+
+    <TextView
+        android:id="@+id/lbEMail"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Correo Electónico"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lbAsunto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/email"
+
+    />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/asunto"
+        app:layout_constraintStart_toEndOf="@id/lbEMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/lbAsunto"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Asunto:"
+        app:layout_constraintTop_toBottomOf="@id/lbEMail"
+        app:layout_constraintBottom_toTopOf="@id/lbMensaje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/asunto"/>
+
+    <EditText
+        android:id="@+id/asunto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Deseo que pruebes esta APP"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintBottom_toTopOf="@id/lbMensaje"
+        app:layout_constraintStart_toEndOf="@id/lbAsunto"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/lbMensaje"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Mensaje:"
+        app:layout_constraintTop_toBottomOf="@id/lbAsunto"
+        app:layout_constraintBottom_toTopOf="@id/btnenvias"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/Mensaje"/>
+
+    <EditText
+        android:id="@+id/Mensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/asunto"
+        app:layout_constraintBottom_toTopOf="@id/btnenvias"
+        app:layout_constraintStart_toEndOf="@id/lbMensaje"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btnenvias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        app:layout_constraintTop_toBottomOf="@id/lbMensaje"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnVolver"
+        />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnenvias"
+        app:layout_constraintTop_toBottomOf="@id/lbMensaje" />
+</androidx.constraintlayout.widget.ConstraintLayout>
