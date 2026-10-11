@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         acero.setOnClickListener(v->
                 cont.setText(String.valueOf(0))
         );
-        Button practica2 = findViewById(R.id.btnPractica2);
+        Button practica2 = findViewById(R.id.pratica2);
+
         practica2.setOnClickListener(v->{
             Intent actividad2 = new Intent(this, Activity_2.class);
             startActivity(actividad2);
@@ -51,11 +52,7 @@ public class MainActivity extends AppCompatActivity {
             Intent actividad4 = new Intent(this, Actiivity4.class);
             startActivity(actividad4);
         });
-        Button practica5 = findViewById(R.id.btnPractica5);
-        practica5.setOnClickListener(v->{
-            Intent actividad5 =  new Intent(this, Actiivty5.class);
-            startActivity(actividad5);
-        });
+
     }
 
 }
