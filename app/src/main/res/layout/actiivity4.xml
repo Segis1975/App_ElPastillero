@@ -212,9 +212,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Validar medicamento"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="636dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#4CAF50"      app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lbFechaI2"
         app:layout_constraintBottom_toBottomOf="parent"/>
