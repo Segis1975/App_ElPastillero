@@ -7,4 +7,98 @@
     android:layout_height="match_parent"
     tools:context=".Activity7">
 
+    <TextView
+        android:id="@+id/lbBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar medicamento: "
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lbCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/lbCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="categoría: "
+        app:layout_constraintTop_toBottomOf="@id/lbBuscar"
+        app:layout_constraintBottom_toTopOf="@id/spCategoria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Spinner
+        android:id="@+id/spCategoria"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lbCategoria"
+        app:layout_constraintBottom_toTopOf="@id/lbmedicamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/lbmedicamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medicamento: "
+        app:layout_constraintTop_toBottomOf="@id/spCategoria"
+        app:layout_constraintBottom_toTopOf="@id/spMedicamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Spinner
+        android:id="@+id/spMedicamento"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lbmedicamento"
+        app:layout_constraintBottom_toTopOf="@id/ubicacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/ubicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicación: "
+        app:layout_constraintTop_toBottomOf="@id/lbmedicamento"
+        app:layout_constraintBottom_toTopOf="@id/lista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        app:layout_constraintTop_toBottomOf="@id/ubicacion"
+        app:layout_constraintBottom_toTopOf="@id/btnInformacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+     </ListView>
+    <Button
+        android:id="@+id/btnprincipio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver atrás"
+        app:layout_constraintTop_toBottomOf="@id/lista"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnInformacion"
+        />
+
+    <Button
+        android:id="@+id/btnInformacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver informeción"
+        app:layout_constraintTop_toBottomOf="@id/lista"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnprincipio"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
