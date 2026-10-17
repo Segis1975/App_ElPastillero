@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Activity7 extends AppCompatActivity {
 
+    String categoria="" ,lugar="", marca="";
+    Button btninfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,8 @@ public class Activity7 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        btninfo  = findViewById(R.id.btnInformacion);
+        btninfo.setEnabled(false);
         String[] categorias = {
                 "Selecciona una categoría",
                 "Analgésicos",
@@ -36,16 +42,23 @@ public class Activity7 extends AppCompatActivity {
         sp_categorias.setAdapter(adaptadorC);
         sp_categorias.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                if (position >0) {
+                    categoria = parent.getItemAtPosition(position).toString();
+                }else{
+                    categoria="";
+                }
+                comprobarDatos();
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(AdapterView<?> parent) {
 
             }
+
         });
         String[] medicamentos ={
+                "Seleccione una marca",
                 "Gelocatil",
                 "Nolotil",
                 "Augmentine",
@@ -59,10 +72,14 @@ public class Activity7 extends AppCompatActivity {
         sp_medicamentos.setAdapter(adapatadorM);
         sp_medicamentos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                if (position>0){
+                    marca = adapterView.getItemAtPosition(position).toString();
+                } else {
+                    marca ="";
+                }
+                comprobarDatos();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -78,5 +95,31 @@ public class Activity7 extends AppCompatActivity {
         ArrayAdapter<String> adaptadorLista = new ArrayAdapter<>(this, android.R.layout.simple_list_item_single_choice, lugares);
         lista.setAdapter(adaptadorLista);
         lista.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+               lugar = adapterView.getItemAtPosition(position).toString();
+               comprobarDatos();
+            }
+        });
+        btninfo.setOnClickListener(v->{
+            Toast.makeText(this, "caetg.: "+categoria+ " marca: "+ marca+" y esta en :"+lugar, Toast.LENGTH_SHORT).show();
+        });
+        Button volverAtras = findViewById(R.id.btnprincipio);
+        volverAtras.setOnClickListener(v ->{
+                finish();
+        });
+
     }
+
+    private void comprobarDatos() {
+        Toast.makeText(this, "EEE", Toast.LENGTH_SHORT).show();
+        if (!categoria.isEmpty() && !marca.isEmpty() && !lugar.isEmpty()) {
+            btninfo.setEnabled(true);
+        }else {
+            btninfo.setEnabled(false);
+        }
+    }
+
+
 }
