@@ -3,7 +3,6 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -27,7 +26,7 @@ public class Validar extends AppCompatActivity {
         TextView nombre = findViewById(R.id.nombre);
         TextView categoria = findViewById(R.id.categoria);
         TextView laboratorio = findViewById(R.id.laboratorio);
-        TextView dosis = findViewById(R.id.dosis);
+        TextView dosis = findViewById(R.id.Dosis);
         TextView hora= findViewById(R.id.horaToma);
         TextView cantidad = findViewById(R.id.cantidad);
         TextView inicio = findViewById(R.id.inicio);

@@ -99,13 +99,13 @@
         app:layout_constraintStart_toEndOf="@id/btnPractica3"
         app:layout_constraintTop_toBottomOf="@id/incre"/>
 
-    <Button
+   <Button
         android:id="@+id/btnPractica5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Práctica 5"
         android:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnPractica9"
         app:layout_constraintEnd_toStartOf="@id/btnPractica6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnPractica3" />
@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:text="Práctica 6"
         android:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnPractica9"
         app:layout_constraintEnd_toStartOf="@id/btnPractica7"
         app:layout_constraintStart_toEndOf="@id/btnPractica5"
         app:layout_constraintTop_toBottomOf="@id/btnPractica3"
@@ -128,9 +128,32 @@
         android:layout_height="wrap_content"
         android:text="Práctica 7"
         android:backgroundTint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnPractica9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnPractica6"
         app:layout_constraintTop_toBottomOf="@id/btnPractica3" />
+
+    <Button
+        android:id="@+id/btnPractica8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Práctica 8"
+        android:backgroundTint="#4CAF50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPractica9"
+        app:layout_constraintTop_toBottomOf="@id/btnPractica5"
+        app:layout_constraintBottom_toBottomOf="parent"
+   />
+    <Button
+        android:id="@+id/btnPractica9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Práctica 9"
+        android:backgroundTint="#4CAF50"
+        app:layout_constraintStart_toEndOf="@id/btnPractica8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPractica5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

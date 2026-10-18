@@ -17,7 +17,7 @@
         app:layout_constraintBottom_toTopOf="@id/cantidad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbHora"
-        app:layout_constraintTop_toBottomOf="@id/dosis" />
+        app:layout_constraintTop_toBottomOf="@id/Dosis" />
 
     <TextView
         android:id="@+id/fin"
@@ -118,13 +118,13 @@
         android:ems="10"
         android:gravity="center_vertical"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/dosis"
+        app:layout_constraintBottom_toTopOf="@id/Dosis"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbLaboratorio"
         app:layout_constraintTop_toBottomOf="@id/categoria" />
 
     <TextView
-        android:id="@+id/dosis"
+        android:id="@+id/Dosis"
         android:layout_width="160dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -142,7 +142,7 @@
         android:gravity="center_vertical"
         android:text="Dosis: "
         app:layout_constraintBottom_toTopOf="@id/lbHora"
-        app:layout_constraintEnd_toStartOf="@id/dosis"
+        app:layout_constraintEnd_toStartOf="@id/Dosis"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lbLaboratorio" />
 

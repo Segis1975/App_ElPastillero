@@ -1,9 +1,7 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,7 +28,7 @@ public class Actiivity4 extends AppCompatActivity {
         EditText nombre = findViewById(R.id.nombre);
         EditText categoria = findViewById(R.id.categoria);
         EditText laboratorio = findViewById(R.id.laboratorio);
-        EditText dosis = findViewById(R.id.dosis);
+        EditText dosis = findViewById(R.id.Dosis);
         EditText hora= findViewById(R.id.horaToma);
         Button menos = findViewById(R.id.menos);
         TextView cantidad = findViewById(R.id.cantidad);
