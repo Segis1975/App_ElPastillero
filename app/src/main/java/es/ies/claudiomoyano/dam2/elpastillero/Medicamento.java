@@ -12,6 +12,8 @@ public class Medicamento implements Serializable {
     String fechaI;
     String fechaF;
 
+    int image;
+
     public Medicamento(String nombre, String categoria, String laboratorio, String dosis, String hora, String cantidad, String fechaI, String fechaF) {
         this.nombre = nombre;
         this.categoria = categoria;
@@ -21,6 +23,18 @@ public class Medicamento implements Serializable {
         this.cantidad = cantidad;
         this.fechaI = fechaI;
         this.fechaF = fechaF;
+    }
+
+    public Medicamento(String nombre, String fechaF, String fechaI, String cantidad, String hora, String dosis, String categoria, String laboratorio, int image) {
+        this.nombre = nombre;
+        this.image = image;
+        this.fechaF = fechaF;
+        this.fechaI = fechaI;
+        this.cantidad = cantidad;
+        this.hora = hora;
+        this.dosis = dosis;
+        this.categoria = categoria;
+        this.laboratorio = laboratorio;
     }
 
     public String getNombre() {
@@ -86,6 +100,10 @@ public class Medicamento implements Serializable {
     public void setFechaF(String fechaF) {
         this.fechaF = fechaF;
     }
+
+    public void setImage(int image) {this.image = image;}
+
+    public int getImage() {return image;    }
 
     @Override
     public String toString() {
