@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Button practica6 = findViewById(R.id.btnPractica6);
         practica6.setOnClickListener(v->{
-            Intent actividad6 = new Intent(this, Activity6.class);
+            Intent actividad6 = new Intent(this, Activity7.Activity6.class);
             startActivity(actividad6);
         });
         Button practica7 = findViewById(R.id.btnPractica7);
@@ -73,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
             Intent actividad8 = new Intent(this, Activity8.class);
             startActivity(actividad8);
         });
-
+        Button practica9 = findViewById(R.id.btnPractica9);
+        practica9.setOnClickListener(v->{
+            Intent actividad9 = new Intent(this, Activity9.class);
+            startActivity(actividad9);
+        });
     }
 
 }

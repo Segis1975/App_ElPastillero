@@ -25,7 +25,7 @@ public class Medicamento implements Serializable {
         this.fechaF = fechaF;
     }
 
-    public Medicamento(String nombre, String fechaF, String fechaI, String cantidad, String hora, String dosis, String categoria, String laboratorio, int image) {
+    public Medicamento(String nombre, String categoria, String laboratorio, String dosis, String hora, String cantidad, String fechaI, String fechaF, int image) {
         this.nombre = nombre;
         this.image = image;
         this.fechaF = fechaF;

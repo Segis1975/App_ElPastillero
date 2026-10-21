@@ -42,7 +42,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Activity6"
+            android:name=".Activity7$Activity6"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -79,6 +79,14 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity9"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Collection"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".FichaMedicamento"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

@@ -2,7 +2,6 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
@@ -27,7 +25,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Activity8 extends AppCompatActivity {
 
@@ -66,7 +63,7 @@ public class Activity8 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        lista = findViewById(R.id.listaMedicamentos);
+        lista = findViewById(R.id.recyclerMedicamentos);
          adaptador = new AdaptadorMedicamentos(this, listaMedicamento);
         lista.setAdapter(adaptador);
         listaMedicamento.add(new Medicamento("a","b","c", "d", "e", "f", "g", "h"));

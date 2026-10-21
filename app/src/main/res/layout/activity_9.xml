@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,116 +8,52 @@
     android:layout_height="match_parent"
     tools:context=".Activity9">
     <Button
-        android:id="@+id/volverAtras"
+        android:id="@+id/volverAtras9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Volver"
         android:backgroundTint="#4CAF50"
-        app:layout_constraintTop_toBottomOf="@id/listaMedicamentos"
+        app:layout_constraintTop_toBottomOf="@id/recyclerMedicamentos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnmas"
+        app:layout_constraintEnd_toStartOf="@id/btnmas9"
         />
 
     <Button
-        android:id="@+id/btnmas"
+        android:id="@+id/btnmas9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Añadir"
         android:backgroundTint="#4CAF50"
-        app:layout_constraintTop_toBottomOf="@id/listaMedicamentos"
+        app:layout_constraintTop_toBottomOf="@id/recyclerMedicamentos"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/volverAtras"
+        app:layout_constraintStart_toEndOf="@id/volverAtras9"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaMedicamentos"
+        android:id="@+id/recyclerMedicamentos"
         android:layout_width="375dp"
         android:layout_height="650dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnmas"
+        app:layout_constraintBottom_toTopOf="@id/btnmas9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
-
-        <?xml version="1.0" encoding="utf-8"?>
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <androidx.cardview.widget.CardView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="5dp"
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp">
-
-                <!-- Imagen del medicamento -->
-                <ImageView
-                    android:id="@+id/imgMedicamento"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/pastilla"
-                    android:contentDescription="Imagen del medicamento"
-                    android:scaleType="centerCrop"
-                    android:layout_marginEnd="16dp" />
-
-                <!-- Tres textos -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <!-- Texto 1: Nombre -->
-                    <TextView
-                        android:id="@+id/txtNombre"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Paracetamol"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="#1565C0" />
-
-                    <!-- Texto 2: Categoría -->
-                    <TextView
-                        android:id="@+id/txtCategoria"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Analgésico"
-                        android:textSize="16sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
-
-                    <!-- Texto 3: Dosis -->
-                    <TextView
-                        android:id="@+id/txtDosis"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="500 mg"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="#333333"
-                        android:layout_marginTop="4dp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+            app:cardUseCompatPadding="true"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
