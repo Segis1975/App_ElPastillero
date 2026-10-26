@@ -1,13 +1,10 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,7 +16,6 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -55,119 +51,36 @@ public class Activity9 extends AppCompatActivity {
                 }
             });
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_9);
+        setContentView(R.layout.activity9);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
         ArrayList<Medicamento> medicamentos = new ArrayList<>();
-
-        int imagen = R.drawable.pastilla;
-
-        medicamentos.add(new Medicamento(
-                "Ibuprofeno", "30/11/2026", "02/10/2026",
-                "12", "14:00", "1 comprimido",
-                "Antiinflamatorios", "Normon", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Paracetamol", "30/12/2026", "01/10/2026",
-                "20", "08:00", "1 comprimido",
-                "Analgésicos", "Cinfa", imagen));
-
-
-        medicamentos.add(new Medicamento(
-                "Omeprazol", "31/05/2027", "03/10/2026",
-                "28", "07:30", "1 cápsula",
-                "Digestivos", "Cinfa", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Amoxicilina", "30/11/2026", "04/10/2026",
-                "21", "09:00", "1 cápsula",
-                "Antibióticos", "Sandoz", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Loratadina", "31/08/2027", "05/10/2026",
-                "10", "21:00", "1 comprimido",
-                "Antialérgicos", "Kern Pharma", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Metformina", "31/07/2027", "06/10/2026",
-                "60", "09:00", "1 comprimido",
-                "Antidiabéticos", "Teva", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Enalapril", "30/06/2027", "07/10/2026",
-                "30", "08:00", "1 comprimido",
-                "Cardiovasculares", "Cinfa", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Atorvastatina", "31/08/2027", "08/10/2026",
-                "30", "22:00", "1 comprimido",
-                "Colesterol", "Normon", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Amlodipino", "30/09/2027", "09/10/2026",
-                "30", "08:00", "1 comprimido",
-                "Cardiovasculares", "Sandoz", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Cetirizina", "31/12/2027", "10/10/2026",
-                "20", "21:00", "1 comprimido",
-                "Antialérgicos", "UCB", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Azitromicina", "31/03/2027", "11/10/2026",
-                "6", "10:00", "1 comprimido",
-                "Antibióticos", "Teva", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Metamizol", "31/01/2027", "12/10/2026",
-                "15", "20:00", "1 cápsula",
-                "Analgésicos", "Stada", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Vitamina D", "31/10/2027", "13/10/2026",
-                "10", "10:00", "1 cápsula",
-                "Vitaminas", "Arkopharma", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Ácido fólico", "31/12/2027", "14/10/2026",
-                "30", "08:00", "1 comprimido",
-                "Vitaminas", "Kern Pharma", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Acetilcisteína", "30/04/2027", "15/10/2026",
-                "12", "09:00", "1 sobre",
-                "Respiratorios", "Cinfa", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Salbutamol", "31/03/2027", "16/10/2026",
-                "1", "Según necesidad", "1 inhalación",
-                "Respiratorios", "GSK", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Famotidina", "30/06/2027", "17/10/2026",
-                "14", "20:00", "1 comprimido",
-                "Digestivos", "Normon", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Hierro", "31/01/2028", "18/10/2026",
-                "30", "12:00", "1 comprimido",
-                "Minerales", "Bayer", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Magnesio", "31/12/2027", "19/10/2026",
-                "20", "19:00", "1 comprimido",
-                "Minerales", "Aquilea", imagen));
-
-        medicamentos.add(new Medicamento(
-                "Cefalexina", "31/12/2026", "20/10/2026",
-                "14", "08:00", "1 cápsula",
-                "Antibióticos", "Normon", imagen));
+        medicamentos.add(new Medicamento("Ibuprofeno", "Antiinflamatorio","Bayer", "12", "20:00", "1","01/10/2026","10/10/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Paracetamol", "Analgésicos","Cinfa", "20","08:00", "1","20/10/2026","01/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Omeoprazol", "Digestivos","Cinfa", "10", "19:00", "1","01/11/2026","11/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Amoxicilina", "Antibióticos","Sandoz", "12", "19:00", "1","01/11/2026","11/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Loratadina", "Antialergicoa","Kern Pharma", "12", "18:00", "1","01/11/2026","11/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Metformina", "Antialergicoa","Kern Pharma", "12", "18:00", "1","01/11/2026","11/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Enalpril","Cardiovasculares","Cinfa", "12", "18:00", "1","01/11/2026","11/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Atorvastatina","Coresterol", "Normnon", "30","22.00","1", "31/08/2026", "08/10/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Amlodipino", "CardioVasculares", "Sandoz", "15","12:00", "2", "30/09/2026", "09/10/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Cetirizina", "Antialergicos", "UCB", "20", "21:00", "1", "11/11/2026", "20/11/2026", R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Azitromicina", "Antibióticos", "Teva","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Metamizol", "Analgésicos","Arkopharma", "12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Vitamina D", "analgésicos,","Stada","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Ácido fólico","Vitaminas","Kern Pharma","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Acetilcisteína", "Respiratorios","Cinfa","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Salbutamol", "Respiratorios", "GSK","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Famotidina", "Digestivos", "NOrmon","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Hierro", "Minerales","Bayer","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Magnesio", "Minerales","Bayer","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
+        medicamentos.add(new Medicamento("Cefalexina", "Antibioticos","Normon","12", "22:30", "1","26/10/2026", "11/11/2026",R.drawable.pastilla));
         vista = findViewById(R.id.recyclerMedicamentos);
         Button volver = findViewById(R.id.volverAtras9);
         volver.setOnClickListener(v->{

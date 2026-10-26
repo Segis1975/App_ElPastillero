@@ -22,4 +22,7 @@
     <string name="_7">7</string>
     <string name="ç">6</string>
     <string name="la_tecla_que_has_tocaco_es">La tecla que has tocaco es:</string>
+    <string name="a_adir_un_medicamento">Añadir un medicamento</string>
+    <string name="ordenar_por_nombre">Ordenar por nombre</string>
+    <string name="acerca_de">Acerca de...</string>
 </resources>

@@ -14,7 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Activity_3 extends AppCompatActivity {
+public class Activity3 extends AppCompatActivity {
 
 
 

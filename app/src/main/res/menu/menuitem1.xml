@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/anadir"
+        android:title="@string/a_adir_un_medicamento"/>
+    <item
+        android:id="@+id/ordenarnombre"
+        android:title="@string/ordenar_por_nombre"/>
+    <item
+        android:id="@+id/acDe"
+        android:title="@string/acerca_de"/>
+</menu>

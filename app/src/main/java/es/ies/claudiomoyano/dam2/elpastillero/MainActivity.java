@@ -37,19 +37,19 @@ public class MainActivity extends AppCompatActivity {
         Button practica2 = findViewById(R.id.btnPractica2);
 
         practica2.setOnClickListener(v->{
-            Intent actividad2 = new Intent(this, Activity_2.class);
+            Intent actividad2 = new Intent(this, Activity2.class);
             startActivity(actividad2);
 
         });
 
         Button practica3 = findViewById(R.id.btnPractica3);
         practica3.setOnClickListener(v->{
-            Intent actividad3 = new Intent(this, Activity_3.class);
+            Intent actividad3 = new Intent(this, Activity3.class);
             startActivity(actividad3);
         });
         Button practica4 = findViewById(R.id.btnPractica4);
         practica4.setOnClickListener(v->{
-            Intent actividad4 = new Intent(this, Actiivity4.class);
+            Intent actividad4 = new Intent(this, Activity4.class);
             startActivity(actividad4);
         });
         Button practica5 = findViewById(R.id.btnPractica5);
@@ -76,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
         practica9.setOnClickListener(v->{
             Intent actividad9 = new Intent(this, Activity9.class);
             startActivity(actividad9);
+        });
+        Button practica11 = findViewById(R.id.btnPractica11);
+        practica11.setOnClickListener(v->{
+            Intent actividad11 = new Intent(this, Actiity11.class);
+            startActivity(actividad11);
         });
     }
 

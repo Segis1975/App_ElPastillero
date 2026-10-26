@@ -151,9 +151,19 @@
         android:text="Práctica 9"
         android:backgroundTint="#4CAF50"
         app:layout_constraintStart_toEndOf="@id/btnPractica8"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPractica11"
         app:layout_constraintTop_toBottomOf="@id/btnPractica5"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
+    <Button
+        android:id="@+id/btnPractica11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Práctica 11"
+        android:backgroundTint="#4CAF50"
+        app:layout_constraintStart_toEndOf="@id/btnPractica9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPractica7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
