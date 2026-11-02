@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/anadir"
-        android:title="@string/a_adir_un_medicamento"/>
+        android:id="@+id/Usuario"
+        android:title="@string/usuario" />
     <item
-        android:id="@+id/ordenarnombre"
-        android:title="@string/ordenar_por_nombre"/>
+        android:id="@+id/familiar"
+        android:title="@string/familiar" />
     <item
         android:id="@+id/acDe"
         android:title="@string/acerca_de"/>

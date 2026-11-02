@@ -25,4 +25,6 @@
     <string name="a_adir_un_medicamento">Añadir un medicamento</string>
     <string name="ordenar_por_nombre">Ordenar por nombre</string>
     <string name="acerca_de">Acerca de...</string>
+    <string name="usuario">Usuario</string>
+    <string name="familiar">Familiar</string>
 </resources>

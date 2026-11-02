@@ -2,10 +2,15 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -77,11 +82,26 @@ public class MainActivity extends AppCompatActivity {
             Intent actividad9 = new Intent(this, Activity9.class);
             startActivity(actividad9);
         });
-        Button practica11 = findViewById(R.id.btnPractica11);
-        practica11.setOnClickListener(v->{
-            Intent actividad11 = new Intent(this, Actiity11.class);
-            startActivity(actividad11);
-        });
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menuitem1, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int op = item.getItemId();
+        if (op == R.id.Usuario){
+            Toast.makeText(this, "USU",Toast.LENGTH_LONG).show();
+        } else if (op == R.id.familiar) {
+            Toast.makeText(this, "Familiar", Toast.LENGTH_LONG).show();
+        }else if (op == R.id.acDe) {
+           startActivity(new Intent(this, AcercaDe.class));
+        }
+        return true;
+    }
 }
