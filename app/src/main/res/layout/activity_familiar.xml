@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Familiar"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/lbNombreF"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/nombreF"
+        app:layout_constraintBottom_toTopOf="@id/lbTelefonoF"
+        app:layout_constraintEnd_toStartOf="@id/txtNombreF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombreF"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/_4"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/txtTelefonoF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbNombreF"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill,LabelFor" />
+
+    <TextView
+        android:id="@+id/lbTelefonoF"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/tel_fono"
+        app:layout_constraintBottom_toTopOf="@id/lbEMailF"
+        app:layout_constraintEnd_toStartOf="@id/txtTelefonoF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbNombreF" />
+
+    <EditText
+        android:id="@+id/txtTelefonoF"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/txtEMailF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbTelefonoF"
+        app:layout_constraintTop_toBottomOf="@id/txtNombreF"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+        />
+
+    <TextView
+        android:id="@+id/lbEMailF"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:gravity="center_vertical"
+        android:text="@string/e_mail"
+        app:layout_constraintBottom_toTopOf="@id/lbParentesco"
+        app:layout_constraintEnd_toStartOf="@id/txtEMailF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbTelefonoF" />
+    />
+
+    <EditText
+        android:id="@+id/txtEMailF"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/txtParentesco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbEMailF"
+        app:layout_constraintTop_toBottomOf="@id/txtTelefonoF"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
+    />
+
+    <TextView
+        android:id="@+id/lbParentesco"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/parentesco"
+        app:layout_constraintBottom_toTopOf="@id/chNotificaciones"
+        app:layout_constraintEnd_toStartOf="@id/txtParentesco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbEMailF" />
+
+    <EditText
+        android:id="@+id/txtParentesco"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/chNotificaciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbParentesco"
+        app:layout_constraintTop_toBottomOf="@id/txtEMailF"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    <CheckBox
+        android:id="@+id/chNotificaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/recibe_las_notifiacaciones"
+        app:layout_constraintBottom_toTopOf="@id/btnCancelarF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtParentesco" />
+
+    <Button
+        android:id="@+id/btnAceptarF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/aceptarF"
+        android:textColor="#263238"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnCancelarF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chNotificaciones" />
+
+    <Button
+        android:id="@+id/btnCancelarF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/CancelarF"
+        android:textColor="#263238"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAceptarF"
+        app:layout_constraintTop_toBottomOf="@id/chNotificaciones" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

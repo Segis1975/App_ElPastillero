@@ -95,8 +95,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int op = item.getItemId();
-        if (op == R.id.Usuario){
-            Toast.makeText(this, "USU",Toast.LENGTH_LONG).show();
+        if (op == R.id.ajustes){
+            startActivity(new Intent(this, Ajustes.class));
+        }
+        else if (op == R.id.Usuario){
+            startActivity(new Intent(this, Usuario.class));
         } else if (op == R.id.familiar) {
             Toast.makeText(this, "Familiar", Toast.LENGTH_LONG).show();
         }else if (op == R.id.acDe) {

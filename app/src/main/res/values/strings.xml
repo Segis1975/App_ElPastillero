@@ -27,4 +27,22 @@
     <string name="acerca_de">Acerca de...</string>
     <string name="usuario">Usuario</string>
     <string name="familiar">Familiar</string>
+    <string name="nombre">Nombre:</string>
+    <string name="domicilio">Domicilio:</string>
+    <string name="localidad">Localidad:</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="grabar">Grabar</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="nombreF">Nombre:</string>
+    <string name="e_mail">E-Mail:</string>
+    <string name="parentesco">Parentesco:</string>
+    <string name="CancelarF">cancelar</string>
+    <string name="aceptarF">Aceptar</string>
+    <string name="recibe_las_notifiacaciones">Recibe las notifiacaciones</string>
+    <string name="e_mailF">E-Mail:</string>
+    <string name="tel_fonoF">Teléfono:</string>
+    <string name="fecha_nacimientoU">Fecha Nacimiento:</string>
+    <string name="provinciaF">Provincia:</string>
+    <string name="c_digo_postalF">Código Postal:</string>
+    <string name="ajustes">Ajustes</string>
 </resources>

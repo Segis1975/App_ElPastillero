@@ -31,7 +31,6 @@ public class BaseDatos extends SQLiteOpenHelper {
             "id_familiar INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "id_usuario INTEGER NOT NULL, " +
             "nombre TEXT NOT NULL, " +
-            "apellidos TEXT, " +
             "telefono TEXT, " +
             "email TEXT, " +
             "parentesco TEXT, " +

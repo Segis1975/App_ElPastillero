@@ -37,13 +37,14 @@
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="Volver atras"
         android:backgroundTint="#4CAF50"
+        android:text="Volver atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnInvitacion" />
+        app:layout_constraintTop_toBottomOf="@id/btnInvitacion"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

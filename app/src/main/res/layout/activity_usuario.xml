@@ -9,109 +9,223 @@
 
     <TextView
         android:id="@+id/lbNombre"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/nombre"
+        app:layout_constraintBottom_toTopOf="@id/lbdomiclio"
+        app:layout_constraintEnd_toStartOf="@id/txtNombreU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombreU"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre:"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/txtDomicilioU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbNombre"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/lblDNI"
+        android:id="@+id/lbdomiclio"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/domicilio"
+        app:layout_constraintBottom_toTopOf="@id/lbLocalidad"
+        app:layout_constraintEnd_toStartOf="@id/txtDomicilioU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbNombre" />
+
+    <EditText
+        android:id="@+id/txtDomicilioU"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D.N.I.:"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_height="40dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/txtLocalidadU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbdomiclio"
+        app:layout_constraintTop_toBottomOf="@id/txtNombreU"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/lblLocalidad"
+        android:id="@+id/lbLocalidad"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/localidad"
+        app:layout_constraintBottom_toTopOf="@id/lbCodigoPostal"
+        app:layout_constraintEnd_toStartOf="@id/txtLocalidadU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbdomiclio" />
+
+    <EditText
+        android:id="@+id/txtLocalidadU"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/Segunda_practica"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@id/txtCodigoPostalU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbLocalidad"
+        app:layout_constraintTop_toBottomOf="@id/txtDomicilioU"
+        tools:ignore="LabelFor,TextContrastCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/lbcp"
+        android:id="@+id/lbCodigoPostal"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/c_digo_postalF"
+        app:layout_constraintBottom_toTopOf="@id/lbProvincia"
+        app:layout_constraintEnd_toStartOf="@id/txtCodigoPostalU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbLocalidad"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/txtCodigoPostalU"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Codigo Postal:"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text|textPostalAddress"
+        app:layout_constraintBottom_toTopOf="@id/txtProvinc1aU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbCodigoPostal"
+        app:layout_constraintTop_toBottomOf="@id/txtLocalidadU"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/lbProvincia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Provincia"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/provinciaF"
+        app:layout_constraintBottom_toTopOf="@id/lbFechaNacimiento"
+        app:layout_constraintEnd_toStartOf="@id/txtProvinc1aU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbCodigoPostal" />
 
     <EditText
-        android:id="@+id/txtNombre6"
+        android:id="@+id/txtProvinc1aU"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="43dp" />
-
-    <EditText
-        android:id="@+id/txtNombre5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="43dp" />
-
-    <EditText
-        android:id="@+id/txtLocalidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="43dp" />
-
-    <EditText
-        android:id="@+id/txtDNI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintBottom_toTopOf="@id/txtFechaNacimientoU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbProvincia"
+        app:layout_constraintTop_toBottomOf="@id/txtCodigoPostalU"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:id="@+id/lbDireccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Domicilio:"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="34dp" />
+        android:id="@+id/lbFechaNacimiento"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/fecha_nacimientoU"
+        app:layout_constraintBottom_toTopOf="@id/lbTelefono"
+        app:layout_constraintEnd_toStartOf="@id/txtFechaNacimientoU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbProvincia"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
-        android:id="@+id/txtDomicilio"
+        android:id="@+id/txtFechaNacimientoU"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintBottom_toTopOf="@id/txtTelefonoU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbFechaNacimiento"
+        app:layout_constraintTop_toBottomOf="@id/txtProvinc1aU"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/lbTelefono"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/tel_fonoF"
+        app:layout_constraintBottom_toTopOf="@id/lbEMail"
+        app:layout_constraintEnd_toStartOf="@id/txtTelefonoU"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbFechaNacimiento" />
 
     <EditText
-        android:id="@+id/txtNombre"
+        android:id="@+id/txtTelefonoU"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@id/txtEMailU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbTelefono"
+        app:layout_constraintTop_toBottomOf="@id/txtFechaNacimientoU"
+        tools:ignore="LabelFor,TextContrastCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/lbEMail"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/e_mailF"
+        app:layout_constraintBottom_toTopOf="@id/btnGrabar"
+        app:layout_constraintEnd_toStartOf="@id/txtEMailU"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/lbTelefono" />
+
+    <EditText
+        android:id="@+id/txtEMailU"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="text|textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/btnCancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbEMail"
+        app:layout_constraintTop_toBottomOf="@id/txtTelefonoU"
+        tools:ignore="LabelFor,TextFields,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnGrabar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="43dp" />
+        android:backgroundTint="@color/boton"
+        android:text="@string/grabar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnCancelar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbEMail"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/boton"
+        android:text="@string/cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnGrabar"
+        app:layout_constraintTop_toBottomOf="@id/txtEMailU"
+        tools:ignore="TextContrastCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
