@@ -8,5 +8,68 @@
     tools:context=".Ajustes">
 
 
+    <TextView
+        android:id="@+id/lbTamanoLetra"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="@string/tama_o_de_letra"
+        app:layout_constraintBottom_toTopOf="@id/swContraste"
+        app:layout_constraintEnd_toStartOf="@id/sptamanoLetra"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Spinner
+        android:id="@+id/sptamanoLetra"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toEndOf="@id/lbTamanoLetra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/swContraste"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Switch
+        android:id="@+id/swContraste"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/activar_modo_oscuro"
+        app:layout_constraintTop_toBottomOf="@id/sptamanoLetra"
+        app:layout_constraintBottom_toTopOf="@id/swLecturaVoz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <Switch
+        android:id="@+id/swLecturaVoz"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/hablitar_comandos_por_voz"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/swBotonesG"
+        app:layout_constraintTop_toBottomOf="@id/swContraste"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    <Switch
+        android:id="@+id/swBotonesG"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/botones_grandes"
+        app:layout_constraintTop_toBottomOf="@id/swLecturaVoz"
+        app:layout_constraintBottom_toTopOf="@id/swcontraste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/swcontraste"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/contraste_alto"
+        app:layout_constraintTop_toBottomOf="@id/swBotonesG"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 </androidx.constraintlayout.widget.ConstraintLayout>

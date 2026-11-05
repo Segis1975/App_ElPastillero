@@ -2,6 +2,9 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 
 import android.os.Bundle;
 
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -20,5 +23,9 @@ public class Ajustes extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        String[] tamanoLetra = {"Pequeño", "Mediano", "Grande"};
+        Spinner sp = findViewById(R.id.sptamanoLetra);
+        ArrayAdapter<String> spAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,tamanoLetra );
+        sp.setAdapter(spAdapter);
     }
 }

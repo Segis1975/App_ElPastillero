@@ -72,13 +72,13 @@
         android:layout_height="40dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/Segunda_practica"
+        android:hint="@string/localidad"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@id/txtCodigoPostalU"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbLocalidad"
         app:layout_constraintTop_toBottomOf="@id/txtDomicilioU"
-        tools:ignore="LabelFor,TextContrastCheck,TouchTargetSizeCheck" />
+        tools:ignore="LabelFor,TextContrastCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/lbCodigoPostal"

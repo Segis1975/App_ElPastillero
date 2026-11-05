@@ -45,4 +45,9 @@
     <string name="provinciaF">Provincia:</string>
     <string name="c_digo_postalF">Código Postal:</string>
     <string name="ajustes">Ajustes</string>
+    <string name="contraste_alto">Contraste alto</string>
+    <string name="tama_o_de_letra">Tamaño de letra:</string>
+    <string name="activar_modo_oscuro">Activar modo Oscuro</string>
+    <string name="hablitar_comandos_por_voz">Hablitar comandos por voz</string>
+    <string name="botones_grandes">Botones Grandes</string>
 </resources>
