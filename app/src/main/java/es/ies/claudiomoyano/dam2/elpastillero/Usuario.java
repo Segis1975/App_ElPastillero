@@ -41,20 +41,8 @@ public class Usuario extends AppCompatActivity {
             public void onFocusChange(View view, boolean hasFocus) {
                 if (!hasFocus)
                     if (codigoPostal.getText().toString().trim().length()== 5){
-                        String[] provincias = {
-                                "Álava", "Albacete", "Alicante", "Almería", "Ávila",
-                                "Badajoz", "Baleares", "Barcelona", "Burgos", "Cáceres",
-                                "Cádiz", "Castellón", "Ciudad Real", "Córdoba", "A Coruña",
-                                "Cuenca", "Girona", "Granada", "Guadalajara", "Guipúzcoa",
-                                "Huelva", "Huesca", "Jaén", "León", "Lleida",
-                                "La Rioja", "Lugo", "Madrid", "Málaga", "Murcia",
-                                "Navarra", "Ourense", "Asturias", "Palencia", "Las Palmas",
-                                "Pontevedra", "Salamanca", "Santa Cruz de Tenerife", "Cantabria",
-                                "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel",
-                                "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora",
-                                "Zaragoza", "Ceuta", "Melilla"};
-                        int n = (Integer.parseInt(codigoPostal.getText().toString().trim()) / 1000)-1;
-                        provincia.setText(provincias[n]);
+                       Funciones f =new Funciones();
+                        provincia.setText(f.sacarProvincia(codigoPostal.getText().toString().trim()));
                     }
 
             }

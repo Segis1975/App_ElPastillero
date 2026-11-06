@@ -1,4 +1,4 @@
-package es.ies.claudiomoyano.dam2.elpastillero;
+package es.ies.claudiomoyano.dam2.elpastillero.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
