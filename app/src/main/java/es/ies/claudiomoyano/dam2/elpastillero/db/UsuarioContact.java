@@ -7,9 +7,9 @@ public final class UsuarioContact {
     public UsuarioContact(){
     }
 
-    public static class UsuaioEntry implements BaseColumns{
+    public static class UsuarioEntry implements BaseColumns{
         public static final String TABLE_NAME = "usuario";
-        public static final String COLUMN_IDUSUARIOo="idusuario";
+        public static final String COLUMN_IDUSUARIO="idusuario";
         public static final String COLUMN_NOMBRE ="nombre";
         public static final String COLUMN_DNI="dni";
         public static final String COLUMN_DOMICILIO=     "domicilio";

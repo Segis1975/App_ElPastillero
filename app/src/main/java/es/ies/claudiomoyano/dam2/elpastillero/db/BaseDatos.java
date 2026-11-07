@@ -13,125 +13,127 @@ public class BaseDatos extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE USUARIO (" +
-            "id_usuario INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "nombre TEXT NOT NULL, " +
-            "dni TEXT UNIQUE, " +
-            "fecha_nacimiento TEXT, " +
-            "telefono TEXT, " +
-            "email TEXT, " +
-            "direccion TEXT, " +
-            "localidad TEXT, "+
-            "cp INT, "+
-            "provincia TEXT, "    +
-            "activo INTEGER DEFAULT 1)");
+        // TABLA USUARIO
+        db.execSQL(
+            "CREATE TABLE " + UsuarioContact.UsuarioEntry.TABLE_NAME + "("+
+             UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+             UsuarioContact.UsuarioEntry.COLUMN_NOMBRE + " TEXT NOT NULL, " +
+             UsuarioContact.UsuarioEntry.COLUMN_DNI + " TEXT UNIQUE, "+
+             UsuarioContact.UsuarioEntry.COLUMN_DOMICILIO + " TEXT, "+
+             UsuarioContact.UsuarioEntry.COLUMN_LOCALIDAD  + " TEXT, "+
+             UsuarioContact.UsuarioEntry.COLUMN_CODIGOPOSTAL + " INT, "+
+             UsuarioContact.UsuarioEntry.COLUMN_PROVINCIA + " TEXT, "+
+             UsuarioContact.UsuarioEntry.COLUMN_FECHANACIMIENTO + " TEXT, " +
+             UsuarioContact.UsuarioEntry.COLUMN_TELEFONO + " TEXT, "+
+             UsuarioContact.UsuarioEntry.COLUMN_EMAIL + " TEXT, "+
+             UsuarioContact.UsuarioEntry.COLUMN_ACTIVO + " TEXT)" );
 
-        // 2. TABLA FAMILIAR
-        db.execSQL("CREATE TABLE FAMILIAR (" +
-            "id_familiar INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_usuario INTEGER NOT NULL, " +
-            "nombre TEXT NOT NULL, " +
-            "telefono TEXT, " +
-            "email TEXT, " +
-            "parentesco TEXT, " +
-            "recibe_alertas INTEGER DEFAULT 1, " +
-            "FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE)");
+        // TABLA CONTACTO
+        db.execSQL(
+            "CREATE TABLE " + ContactoContact.ContactoEntry.TABLE_NAME + " ("+
+            ContactoContact.ContactoEntry.COLUMN_idfamiliar +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+           // ContactoContact.ContactoEntry.COLUMN_idusuario + " INTEGER NOT NULL, " +
+            ContactoContact.ContactoEntry.COLUMN_nombre + " TEXT NOT NULL, " +
+            ContactoContact.ContactoEntry.COLUMN_telefono + " TEXT, " +
+            ContactoContact.ContactoEntry.COLUMN_email + " TEXT, " +
+            ContactoContact.ContactoEntry.COLUMN_parentesco + " TEXT, " +
+            ContactoContact.ContactoEntry.COLUMN_alertas + " INTEGER " +
+            "FOREIGN KEY (" + ContactoContact.ContactoEntry.COLUMN_idusuario +
+                    ") REFERENCES "+ UsuarioContact.UsuarioEntry.TABLE_NAME+"("+
+                    UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO+"))");
 
-        // 3. TABLA CATEGORIA
-        db.execSQL("CREATE TABLE CATEGORIA (" +
-            "id_categoria INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "nombre TEXT NOT NULL UNIQUE, " +
-            "descripcion TEXT)");
+        // TABLA CATEGORIA
+
+        db.execSQL(
+            "CREATE TABLE " + CategoriaContract.CategoriaEntry.TABLE_NAME + " (" +
+            CategoriaContract.CategoriaEntry.COLUMN_idcategoria + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            CategoriaContract.CategoriaEntry.COLUMN_nombre + " TEXT NOT NULL UNIQUE, " +
+            CategoriaContract.CategoriaEntry.COLUMN_descripcion + " TEXT)");
 
         // 4. TABLA MEDICAMENTO
-        db.execSQL("CREATE TABLE MEDICAMENTO (" +
-            "id_medicamento INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_usuario INTEGER NOT NULL, " +
-            "id_categoria INTEGER, " +
-            "nombre TEXT NOT NULL, " +
-            "principio_activo TEXT, " +
-            "laboratorio TEXT, " +
-            "dosis TEXT, " +
-            "formato TEXT, " +
-            "cantidad_total INTEGER DEFAULT 0, " +
-            "stock_minimo INTEGER DEFAULT 0, " +
-            "fecha_inicio TEXT, " +
-            "fecha_fin TEXT, " +
-            "instrucciones TEXT, " +
-            "imagen TEXT, " +
-            "activo INTEGER DEFAULT 1, " +
-            "FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE, " +
-            "FOREIGN KEY (id_categoria) REFERENCES CATEGORIA(id_categoria) ON DELETE SET NULL)");
+        db.execSQL(
+            "CREATE TABLE " + MedicamentoContract.MedicamentoEntry.TABLE_NAME + " (" +
+            MedicamentoContract.MedicamentoEntry.COLUMN_idmedicamento + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+           // MedicamentoContract.MedicamentoEntry.COLUMN_idusuario + " INTEGER NOT NULL, " +
+           // MedicamentoContract.MedicamentoEntry.COLUMN_idcategoria + "INTEGER NOT NULL, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_nombre + " TEXT NOT NULL, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_familia + " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_laboratorio +  " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_formato + " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_dosis + " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_cantidad + " INTEGER DEFAULT 0, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_stock +  "INTEGER DEFAULT 0, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_fecha_inicio + " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_fecha_fin + " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_imagen + " TEXT, " +
+            MedicamentoContract.MedicamentoEntry.COLUMN_activo + "INTEGER DEFAULT 1, " +
+            // tabla contacto
+           "FOREIGN KEY (" + MedicamentoContract.MedicamentoEntry.COLUMN_idusuario +
+                    ") REFERENCES "+ UsuarioContact.UsuarioEntry.TABLE_NAME+"("+
+                    UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO+"), " +
+           "FOREIGN KEY (" + MedicamentoContract.MedicamentoEntry.COLUMN_idcategoria +
+                    ") REFERENCES " + CategoriaContract.CategoriaEntry.TABLE_NAME+"("+
+                    CategoriaContract.CategoriaEntry.COLUMN_idcategoria+"))");
+
 
         // 5. TABLA HORARIO
-        db.execSQL("CREATE TABLE HORARIO (" +
-            "id_horario INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_medicamento INTEGER NOT NULL, " +
-            "hora TEXT NOT NULL, " +
-            "dosis TEXT, " +
-            "dias_semana TEXT, " +
-            "frecuencia TEXT, " +
-            "activo INTEGER DEFAULT 1, " +
-            "FOREIGN KEY (id_medicamento) REFERENCES MEDICAMENTO(id_medicamento) ON DELETE CASCADE)");
+        db.execSQL(
+            "CREATE TABLE " + HorarioContract.HorarioEntry.TABLE_NAME + " (" +
+            HorarioContract.HorarioEntry.COLUMN_idhorario + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            //HorarioContract.HorarioEntry.COLUMN_idmedicamento + " INTEGER NOT NULL, " +
+            HorarioContract.HorarioEntry.COLUMN_hora + "TEXT NOT NULL, " +
+            HorarioContract.HorarioEntry.COLUMN_dosis + " TEXT, " +
+            HorarioContract.HorarioEntry.COLUMN_diasSemana + " TEXT, " +
+            HorarioContract.HorarioEntry.COLUMN_activo + "INTEGER, "+
+            "FOREIGN KEY ("+HorarioContract.HorarioEntry.COLUMN_idmedicamento +
+                    ") REFERENCES "+ MedicamentoContract.MedicamentoEntry.TABLE_NAME+"("+
+                     MedicamentoContract.MedicamentoEntry.COLUMN_idmedicamento+"))");
 
         // 6. TABLA TOMA
-        db.execSQL("CREATE TABLE TOMA (" +
-            "id_toma INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_horario INTEGER NOT NULL, " +
-            "fecha TEXT NOT NULL, " +
-            "hora_prevista TEXT, " +
-            "hora_real TEXT, " +
-            "estado TEXT DEFAULT 'PENDIENTE' " +
-            "CHECK (estado IN ('PENDIENTE','TOMADA','OMITIDA')), " +
-            "observaciones TEXT, " +
-            "FOREIGN KEY (id_horario) REFERENCES HORARIO(id_horario) ON DELETE CASCADE)");
+        db.execSQL(
+            "CREATE TABLE " + TomaContract.TomaEntry.TABLE_NAME +" (" +
+            TomaContract.TomaEntry.COLUMN_idtoma + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            //TomaContract.TomaEntry.COLUMN_idhorario + " INTEGER NOT NULL, " +
+            TomaContract.TomaEntry.COLUMN_fecha + " TEXT NOT NULL, " +
+            TomaContract.TomaEntry.COLUMN_horaprevista + " TEXT, " +
+            TomaContract.TomaEntry.COLUMN_horareal + " TEXT, " +
+            TomaContract.TomaEntry.COLUMN_estado + " TEXT DEFAULT 'PENDIENTE', " +
+  //          "CHECK (estado IN ('PENDIENTE','TOMADA','OMITIDA')), " +
+            TomaContract.TomaEntry.COLUMN_observaciones + " TEXT, " +
+            "FOREIGN KEY (" + TomaContract.TomaEntry.COLUMN_idhorario +
+                    ") REFERENCES " + HorarioContract.HorarioEntry.TABLE_NAME+"("+
+                    HorarioContract.HorarioEntry.COLUMN_idhorario+"))");
 
         // 7. TABLA ALERTA
-        db.execSQL("CREATE TABLE ALERTA (" +
-            "id_alerta INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_usuario INTEGER NOT NULL, " +
-            "id_medicamento INTEGER, " +
-            "tipo TEXT NOT NULL, " +
-            "mensaje TEXT NOT NULL, " +
-            "fecha_hora TEXT NOT NULL, " +
-            "leida INTEGER DEFAULT 0, " +
-            "FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE, " +
-            "FOREIGN KEY (id_medicamento) REFERENCES MEDICAMENTO(id_medicamento) ON DELETE SET NULL)");
-
+        db.execSQL(
+            "CREATE TABLE "+AlertaContract.AlertaEntry.TABLE_NAME + " (" +
+            AlertaContract.AlertaEntry.COLUMN_idalerta + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            // "id_usuario INTEGER NOT NULL, " +
+            //"id_medicamento INTEGER, " +
+            AlertaContract.AlertaEntry.COLUMN_tipo + " TEXT NOT NULL, " +
+            AlertaContract.AlertaEntry.COLUMN_mensaje + " TEXT NOT NULL, " +
+            AlertaContract.AlertaEntry.COLUMN_fechahora + " TEXT NOT NULL, " +
+            AlertaContract.AlertaEntry.COLUMN_leida + " INTEGER DEFAULT 0, " +
+            "FOREIGN KEY ("+ AlertaContract.AlertaEntry.COLUMN_idusuatrio +") REFERENCES "+
+                    UsuarioContact.UsuarioEntry.TABLE_NAME+"("+UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO+"), "+
+            "FOREIGN KEY ("+AlertaContract.AlertaEntry.COLUMN_idmedicamento +" REFERENCES "+
+                    MedicamentoContract.MedicamentoEntry.TABLE_NAME+"("+
+                    MedicamentoContract.MedicamentoEntry.COLUMN_idmedicamento+"))");
         // 8. TABLA CITA_MEDICA
-        db.execSQL("CREATE TABLE CITA_MEDICA (" +
-            "id_cita INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_usuario INTEGER NOT NULL, " +
-            "fecha TEXT NOT NULL, " +
-            "hora TEXT NOT NULL, " +
-            "centro_medico TEXT, " +
-            "especialidad TEXT, " +
-            "medico TEXT, " +
-            "motivo TEXT, " +
-            "observaciones TEXT, " +
-            "estado TEXT DEFAULT 'PENDIENTE', " +
-            "FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE)");
-
-        // 9. TABLA HISTORIAL
-        db.execSQL("CREATE TABLE HISTORIAL (" +
-            "id_historial INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_usuario INTEGER NOT NULL, " +
-            "fecha_hora TEXT NOT NULL, " +
-            "tipo TEXT NOT NULL, " +
-            "descripcion TEXT, " +
-            "FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE)");
-
-        //10. TABLA CONFIGURACION
-        db.execSQL("CREATE TABLE CONFIGURACION (" +
-            "id_configuracion INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "id_usuario INTEGER NOT NULL UNIQUE, " +
-            "tamano_letra INTEGER DEFAULT 16, " +
-            "voz_activada INTEGER DEFAULT 0, " +
-            "sonido_activado INTEGER DEFAULT 1, " +
-            "vibracion INTEGER DEFAULT 1, " +
-            "notificaciones INTEGER DEFAULT 1, " +
-            "idioma TEXT DEFAULT 'es', " +
-            "FOREIGN KEY (id_usuario) REFERENCES USUARIO(id_usuario) ON DELETE CASCADE)");
+        db.execSQL(
+            "CREATE TABLE " +CitaMedicaContract.CitaMedicaEntry.TABLE_NAME +" (" +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_idcita + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_fecha + " TEXT NOT NULL, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_hora + " TEXT NOT NULL, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_lugar +" TEXT, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_especialista+ " TEXT, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_nombremedico+ " TEXT, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_motivo+ " TEXT, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_observaciones+ " TEXT, " +
+            CitaMedicaContract.CitaMedicaEntry.COLUMN_estado+" TEXT DEFAULT 'PENDIENTE', " +
+            "FOREIGN KEY ("+ CitaMedicaContract.CitaMedicaEntry.COLUMN_idusuario +
+                    ") REFERENCES " + UsuarioContact.UsuarioEntry.TABLE_NAME+"("+
+                    UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO+"))");
 
     }
 
