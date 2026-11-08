@@ -37,7 +37,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             ContactoContact.ContactoEntry.COLUMN_telefono + " TEXT, " +
             ContactoContact.ContactoEntry.COLUMN_email + " TEXT, " +
             ContactoContact.ContactoEntry.COLUMN_parentesco + " TEXT, " +
-            ContactoContact.ContactoEntry.COLUMN_alertas + " INTEGER " +
+            ContactoContact.ContactoEntry.COLUMN_alertas + " INTEGER, " +
             "FOREIGN KEY (" + ContactoContact.ContactoEntry.COLUMN_idusuario +
                     ") REFERENCES "+ UsuarioContact.UsuarioEntry.TABLE_NAME+"("+
                     UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO+"))");
@@ -116,7 +116,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             AlertaContract.AlertaEntry.COLUMN_leida + " INTEGER DEFAULT 0, " +
             "FOREIGN KEY ("+ AlertaContract.AlertaEntry.COLUMN_idusuatrio +") REFERENCES "+
                     UsuarioContact.UsuarioEntry.TABLE_NAME+"("+UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO+"), "+
-            "FOREIGN KEY ("+AlertaContract.AlertaEntry.COLUMN_idmedicamento +" REFERENCES "+
+            "FOREIGN KEY ("+AlertaContract.AlertaEntry.COLUMN_idmedicamento +") REFERENCES "+
                     MedicamentoContract.MedicamentoEntry.TABLE_NAME+"("+
                     MedicamentoContract.MedicamentoEntry.COLUMN_idmedicamento+"))");
         // 8. TABLA CITA_MEDICA
