@@ -1,8 +1,6 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-import es.ies.claudiomoyano.dam2.elpastillero.db.UsuarioContact;
-
-public class Usuario {
+public class clUsuario {
     private String nombre;
     private String DNI;
     private String domicilio;
@@ -14,7 +12,7 @@ public class Usuario {
     private String email;
     private  String activo;
 
-    public Usuario(String nombre, String DNI, String domicilio, String localidad, String codigopostal, String provincia, String fechanacimiento, String telefono, String email, String activo) {
+    public clUsuario(String nombre, String DNI, String domicilio, String localidad, String codigopostal, String provincia, String fechanacimiento, String telefono, String email, String activo) {
         this.nombre = nombre;
         this.DNI = DNI;
         this.domicilio = domicilio;
@@ -24,10 +22,10 @@ public class Usuario {
         this.fechanacimiento = fechanacimiento;
         this.telefono = telefono;
         this.email = email;
-        this.activo = activo;
+        this.activo = this.activo;
     }
 
-    public Usuario(String nombre, String DNI, String activo) {
+    public clUsuario(String nombre, String DNI, String activo) {
         this.nombre = nombre;
         this.DNI = DNI;
         this.activo = activo;

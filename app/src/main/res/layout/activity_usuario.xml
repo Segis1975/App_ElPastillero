@@ -13,7 +13,7 @@
         android:layout_height="40dp"
         android:gravity="center_vertical"
         android:text="@string/nombre"
-        app:layout_constraintBottom_toTopOf="@id/lbdomiclio"
+        app:layout_constraintBottom_toTopOf="@id/lbDNI"
         app:layout_constraintEnd_toStartOf="@id/txtNombreU"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,10 +25,37 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@id/txtDomicilioU"
+        android:hint="Nombre y apellidos"
+        app:layout_constraintBottom_toTopOf="@id/txtDNIu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbNombre"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+    <TextView
+        android:id="@+id/lbDNI"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="DNI:"
+        app:layout_constraintBottom_toTopOf="@id/lbdomiclio"
+        app:layout_constraintEnd_toStartOf="@id/txtDNIu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbNombre" />
+
+    <EditText
+        android:id="@+id/txtDNIu"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        android:hint="DNI"
+        app:layout_constraintBottom_toTopOf="@id/txtDomicilioU"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lbDNI"
+        app:layout_constraintTop_toBottomOf="@id/txtNombreU"
         tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
@@ -40,7 +67,7 @@
         app:layout_constraintBottom_toTopOf="@id/lbLocalidad"
         app:layout_constraintEnd_toStartOf="@id/txtDomicilioU"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lbNombre" />
+        app:layout_constraintTop_toBottomOf="@id/lbDNI" />
 
     <EditText
         android:id="@+id/txtDomicilioU"
@@ -49,10 +76,11 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:hint="Dirección"
         app:layout_constraintBottom_toTopOf="@id/txtLocalidadU"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbdomiclio"
-        app:layout_constraintTop_toBottomOf="@id/txtNombreU"
+        app:layout_constraintTop_toBottomOf="@id/txtDNIu"
         tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
@@ -99,6 +127,7 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="text|textPostalAddress"
+        android:hint="Código postal"
         app:layout_constraintBottom_toTopOf="@id/txtProvinc1aU"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbCodigoPostal"
@@ -111,7 +140,7 @@
         android:layout_height="40dp"
         android:gravity="center_vertical"
         android:text="@string/provinciaF"
-        app:layout_constraintBottom_toTopOf="@id/lbFechaNacimiento"
+                app:layout_constraintBottom_toTopOf="@id/lbFechaNacimiento"
         app:layout_constraintEnd_toStartOf="@id/txtProvinc1aU"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lbCodigoPostal" />
@@ -123,6 +152,7 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:hint="Provincia"
         app:layout_constraintBottom_toTopOf="@id/txtFechaNacimientoU"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbProvincia"
@@ -147,6 +177,7 @@
         android:layout_height="40dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="fecha de nacimiento"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@id/txtTelefonoU"
         app:layout_constraintEnd_toEndOf="parent"
@@ -172,6 +203,7 @@
         android:autofillHints=""
         android:ems="10"
         android:inputType="phone"
+        android:hint="teléfono"
         app:layout_constraintBottom_toTopOf="@id/txtEMailU"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbTelefono"
@@ -184,7 +216,7 @@
         android:layout_height="40dp"
         android:gravity="center_vertical"
         android:text="@string/e_mailF"
-        app:layout_constraintBottom_toTopOf="@id/btnGrabar"
+                app:layout_constraintBottom_toTopOf="@id/btnGrabarU"
         app:layout_constraintEnd_toStartOf="@id/txtEMailU"
         app:layout_constraintStart_toStartOf="parent"
 
@@ -197,33 +229,34 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="text|textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@id/btnCancelar"
+        android:hint="E-Mail"
+        app:layout_constraintBottom_toTopOf="@id/btnCancelarU"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lbEMail"
         app:layout_constraintTop_toBottomOf="@id/txtTelefonoU"
         tools:ignore="LabelFor,TextFields,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/btnGrabar"
+        android:id="@+id/btnGrabarU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/boton"
         android:text="@string/grabar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnCancelar"
+        app:layout_constraintEnd_toStartOf="@id/btnCancelarU"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lbEMail"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/btnCancelar"
+        android:id="@+id/btnCancelarU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/boton"
         android:text="@string/cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnGrabar"
+        app:layout_constraintStart_toEndOf="@id/btnGrabarU"
         app:layout_constraintTop_toBottomOf="@id/txtEMailU"
         tools:ignore="TextContrastCheck" />
 

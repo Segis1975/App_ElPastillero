@@ -1,9 +1,12 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
+import static es.ies.claudiomoyano.dam2.elpastillero.R.id.btnGrabarU;
+
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CalendarView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,8 +16,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.lang.reflect.Array;
 import java.util.Calendar;
+
+import es.ies.claudiomoyano.dam2.elpastillero.clases.clUsuario;
+import es.ies.claudiomoyano.dam2.elpastillero.db.UsuarioRepository;
 
 public class Usuario extends AppCompatActivity {
 
@@ -29,20 +34,22 @@ public class Usuario extends AppCompatActivity {
             return insets;
         });
         EditText nombre = findViewById(R.id.txtNombreU);
+        EditText dniU = findViewById(R.id.txtDNIu);
         EditText domicilio = findViewById(R.id.txtDomicilioU);
         EditText localidad = findViewById(R.id.txtLocalidadU);
         EditText codigoPostal = findViewById(R.id.txtCodigoPostalU);
         EditText provincia = findViewById(R.id.txtProvinc1aU);
         EditText fechaNaci = findViewById(R.id.txtFechaNacimientoU);
-        EditText Telefono = findViewById(R.id.txtTelefonoU);
+        EditText telefono = findViewById(R.id.txtTelefonoU);
         EditText email = findViewById(R.id.txtEMailU);
+        Button grabar = findViewById(btnGrabarU);
         codigoPostal.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (!hasFocus)
                     if (codigoPostal.getText().toString().trim().length()== 5){
                        Funciones f =new Funciones();
-                        provincia.setText(f.sacarProvincia(codigoPostal.getText().toString().trim()));
+                       provincia.setText(f.sacarProvincia(codigoPostal.getText().toString().trim()));
                     }
 
             }
@@ -60,6 +67,34 @@ public class Usuario extends AppCompatActivity {
             }, ano, mm,dd);
             dialogoFcha.show();
         });
+        grabar.setOnClickListener(v->{
+            if (nombre.getText().toString().trim().isEmpty()){
+                AlertDialog.Builder builder  = new AlertDialog.Builder(this);
+                builder.setTitle("ERROR");
+                builder.setMessage("El campo nombre es obligatorio");
+                builder.setNeutralButton("Aceptar", ((dialog, which) ->{} ));
+                builder.create().show();
+            }
+            else{
+                String activo="Si";
+                clUsuario usu = new clUsuario(
+                        nombre.getText().toString().trim(),
+                        dniU.getText().toString().trim(),
+                        domicilio.getText().toString().trim(),
+                        localidad.getText().toString().trim(),
+                        codigoPostal.getText().toString().trim().trim(),
+                        provincia.getText().toString().trim(),
+                        fechaNaci.getText().toString().trim(),
+                        telefono.getText().toString().trim(),
+                        email.getText().toString().trim(),
+                        activo);
+                UsuarioRepository usuRe = new UsuarioRepository();
 
+
+
+            }
+
+            Toast.makeText(this,"GRanbar", Toast.LENGTH_SHORT).show();
+        });
     }
 }

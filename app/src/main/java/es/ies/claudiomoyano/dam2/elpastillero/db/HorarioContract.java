@@ -9,10 +9,11 @@ public final class HorarioContract {
 
         public static final String COLUMN_idhorario="id_horario";
         public static final String COLUMN_idmedicamento = "id_medicamento";
+        public static final String COLUMN_fecha=  "fecha";
         public static final String COLUMN_hora="hora";
         public static final String COLUMN_dosis= "dosis";
         public static final String COLUMN_diasSemana= "dias_semana";
-        public static final String COLUMN_frecuencis=  "frecuencia";
+
         public static final String COLUMN_activo= "activo";
 
     }
