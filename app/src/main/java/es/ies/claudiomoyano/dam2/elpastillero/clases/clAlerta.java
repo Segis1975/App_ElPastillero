@@ -1,13 +1,13 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-public class Alerta {
+public class clAlerta {
     private String alerta;
     private String tipo;
     private String mensaje;
     private String fechahora;
     private String leida;
 
-    public Alerta(String alerta, String tipo, String mensaje, String fechahora, String leida) {
+    public clAlerta(String alerta, String tipo, String mensaje, String fechahora, String leida) {
         this.alerta = alerta;
         this.tipo = tipo;
         this.mensaje = mensaje;
@@ -15,7 +15,7 @@ public class Alerta {
         this.leida = leida;
     }
 
-    public Alerta(String tipo, String mensaje, String fechahora) {
+    public clAlerta(String tipo, String mensaje, String fechahora) {
         this.tipo = tipo;
         this.mensaje = mensaje;
         this.fechahora = fechahora;

@@ -5,16 +5,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import es.ies.claudiomoyano.dam2.elpastillero.clases.clUsuario;
+import es.ies.claudiomoyano.dam2.elpastillero.db.BaseDatos;
+import es.ies.claudiomoyano.dam2.elpastillero.db.UsuarioRepository;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,13 +21,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btnch), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        TextView cont = findViewById(R.id.contador);
+        setContentView(R.layout.activty_main);
+        // Los insets los gestiona android:fitsSystemWindows="true" en la raiz del layout.
+        // Asi el contenido queda por debajo de la ActionBar y de la barra de navegacion.
+        // (Antes se aplicaban al boton btnMedicamentos, que no es la vista raiz.)
+   /*     TextView cont = findViewById(R.id.contador);
         Button mas = findViewById(R.id.incre);
         Button acero=findViewById(R.id.reset);
         mas.setOnClickListener(v->{
@@ -82,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             Intent actividad9 = new Intent(this, Activity9.class);
             startActivity(actividad9);
         });
-
+*/
     }
 
     @Override
@@ -99,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, Ajustes.class));
         }
         else if (op == R.id.Usuario){
+
             startActivity(new Intent(this, Usuario.class));
         } else if (op == R.id.familiar) {
             Toast.makeText(this, "Familiar", Toast.LENGTH_LONG).show();

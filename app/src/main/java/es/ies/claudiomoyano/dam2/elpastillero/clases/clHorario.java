@@ -1,21 +1,18 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-import es.ies.claudiomoyano.dam2.elpastillero.db.HorarioContract;
-import es.ies.claudiomoyano.dam2.elpastillero.db.MedicamentoContract;
-
-public class Horario {
+public class clHorario {
 
     private String fecha;
     private String hora;
     private String diasSemana;
     private String activo;
 
-    public Horario(String fecha, String hora) {
+    public clHorario(String fecha, String hora) {
         this.fecha = fecha;
         this.hora = hora;
     }
 
-    public Horario(String activo, String diasSemana, String hora, String fecha) {
+    public clHorario(String activo, String diasSemana, String hora, String fecha) {
         this.activo = activo;
         this.diasSemana = diasSemana;
         this.hora = hora;

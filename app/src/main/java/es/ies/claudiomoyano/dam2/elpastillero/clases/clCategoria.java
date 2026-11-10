@@ -1,13 +1,13 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-public class Categoria {
+public class clCategoria {
     private String nombre, desctipcion;
 
-    public Categoria(String nombre) {
+    public clCategoria(String nombre) {
         this.nombre = nombre;
     }
 
-    public Categoria(String nombre, String desctipcion) {
+    public clCategoria(String nombre, String desctipcion) {
         this.nombre = nombre;
         this.desctipcion = desctipcion;
     }

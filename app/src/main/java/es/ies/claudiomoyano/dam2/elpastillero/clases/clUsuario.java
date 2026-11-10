@@ -12,6 +12,9 @@ public class clUsuario {
     private String email;
     private  String activo;
 
+    public clUsuario() {
+    }
+
     public clUsuario(String nombre, String DNI, String domicilio, String localidad, String codigopostal, String provincia, String fechanacimiento, String telefono, String email, String activo) {
         this.nombre = nombre;
         this.DNI = DNI;

@@ -1,6 +1,6 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-public class CitaMedica {
+public class clCitaMedica {
    private String fecha;
    private String hora;
    private String lugar;
@@ -10,14 +10,14 @@ public class CitaMedica {
    private String observaciones;
    private String estado;
 
-   public CitaMedica(String fecha, String hora, String lugar, String especialista) {
+   public clCitaMedica(String fecha, String hora, String lugar, String especialista) {
       this.fecha = fecha;
       this.hora = hora;
       this.lugar = lugar;
       this.especialista = especialista;
    }
 
-   public CitaMedica(String fecha, String hora, String lugar, String especialista, String nombremedico, String motivo, String observaciones, String estado) {
+   public clCitaMedica(String fecha, String hora, String lugar, String especialista, String nombremedico, String motivo, String observaciones, String estado) {
       this.fecha = fecha;
       this.hora = hora;
       this.lugar = lugar;

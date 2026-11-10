@@ -50,4 +50,19 @@
     <string name="activar_modo_oscuro">Activar modo Oscuro</string>
     <string name="hablitar_comandos_por_voz">Hablitar comandos por voz</string>
     <string name="botones_grandes">Botones Grandes</string>
+    <string name="citas_m_dicas">Citas médicas</string>
+    <string name="hola_sergio">Hola Sergio</string>
+    <string name="resumen_de_pastillas_tomadas">Resumen de pastillas tomadas</string>
+    <string name="medicamentos">Medicamentos</string>
+    <string name="el_pastilero">EL PASTILERO</string>
+    <string name="totales">Totales</string>
+    <string name="_25">25</string>
+    <string name="el_pastillero">EL PASTILLERO</string>
+    <string name="totales1">Totales</string>
+    <string name="_252">25</string>
+    <string name="le_quedan">Le quedan</string>
+    <string name="_2525">25</string>
+    <string name="_2523">25</string>
+    <string name="existencias">Existencias</string>
+    <string name="tomadas">Tomadas</string>
 </resources>

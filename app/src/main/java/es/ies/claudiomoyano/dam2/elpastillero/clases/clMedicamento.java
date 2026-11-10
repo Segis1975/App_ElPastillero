@@ -1,8 +1,6 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-import es.ies.claudiomoyano.dam2.elpastillero.db.MedicamentoContract;
-
-public class Medicamento {
+public class clMedicamento {
     public String nombre;
     public String familia;
     public String laboratorio;
@@ -16,11 +14,11 @@ public class Medicamento {
     public String activo;
 
 
-    public Medicamento(String nombre) {
+    public clMedicamento(String nombre) {
         this.nombre = nombre;
     }
 
-    public Medicamento(String nombre, String familia, String laboratorio, String formato, String dosis, String cantidad, String stock, String fechainicio, String fechafin, String imagen, String activo) {
+    public clMedicamento(String nombre, String familia, String laboratorio, String formato, String dosis, String cantidad, String stock, String fechainicio, String fechafin, String imagen, String activo) {
         this.nombre = nombre;
         this.familia = familia;
         this.laboratorio = laboratorio;

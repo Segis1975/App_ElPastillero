@@ -1,6 +1,6 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
-public class Contacto {
+public class clContacto {
 
     private String nombre;
     private String telefono;
@@ -8,11 +8,11 @@ public class Contacto {
     private  String parentesco;
     private String alertas;
 
-    public Contacto(String nombre) {
+    public clContacto(String nombre) {
         this.nombre = nombre;
     }
 
-    public Contacto(String nombre, String telefono, String email, String parentesco, String alertas) {
+    public clContacto(String nombre, String telefono, String email, String parentesco, String alertas) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
