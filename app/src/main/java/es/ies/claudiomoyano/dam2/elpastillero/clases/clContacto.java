@@ -2,17 +2,30 @@ package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
 public class clContacto {
 
+    private int id;
     private String nombre;
     private String telefono;
     private String email;
     private  String parentesco;
-    private String alertas;
+    private int alertas;
+
+    public clContacto() {
+    }
 
     public clContacto(String nombre) {
         this.nombre = nombre;
     }
 
-    public clContacto(String nombre, String telefono, String email, String parentesco, String alertas) {
+    public clContacto(String nombre, String telefono, String email, String parentesco, int alertas) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+        this.parentesco = parentesco;
+        this.alertas = alertas;
+    }
+
+    public clContacto(int id, String nombre, String telefono, String email, String parentesco, int alertas) {
+        this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;
@@ -52,11 +65,19 @@ public class clContacto {
         this.parentesco = parentesco;
     }
 
-    public String getAlertas() {
+    public int getAlertas() {
         return alertas;
     }
 
-    public void setAlertas(String alertas) {
+    public void setAlertas(int alertas) {
         this.alertas = alertas;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

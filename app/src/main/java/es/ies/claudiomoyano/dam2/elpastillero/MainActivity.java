@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
             startActivity(new Intent(this, Usuario.class));
         } else if (op == R.id.familiar) {
-            Toast.makeText(this, "Familiar", Toast.LENGTH_LONG).show();
+            startActivity(new Intent( this, Contacto.class));
         }else if (op == R.id.acDe) {
            startActivity(new Intent(this, AcercaDe.class));
         }

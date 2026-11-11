@@ -35,7 +35,6 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL(
                 "CREATE TABLE " + ContactoContact.ContactoEntry.TABLE_NAME + " (" +
                         ContactoContact.ContactoEntry.COLUMN_idfamiliar + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        ContactoContact.ContactoEntry.COLUMN_idusuario + " INTEGER, " +
                         ContactoContact.ContactoEntry.COLUMN_nombre + " TEXT NOT NULL, " +
                         ContactoContact.ContactoEntry.COLUMN_telefono + " TEXT, " +
                         ContactoContact.ContactoEntry.COLUMN_email + " TEXT, " +

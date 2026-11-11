@@ -1,17 +1,14 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
 import static es.ies.claudiomoyano.dam2.elpastillero.R.id.btnGrabarU;
-import static es.ies.claudiomoyano.dam2.elpastillero.R.id.txtDomicilioU;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -19,6 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 import es.ies.claudiomoyano.dam2.elpastillero.clases.clUsuario;
 import es.ies.claudiomoyano.dam2.elpastillero.db.BaseDatos;
@@ -26,7 +24,9 @@ import es.ies.claudiomoyano.dam2.elpastillero.db.UsuarioRepository;
 
 public class Usuario extends AppCompatActivity {
     clUsuario u = new clUsuario();
+     BaseDatos bd;
     UsuarioRepository usuRepo;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,12 @@ public class Usuario extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        BaseDatos bd = new BaseDatos(this);
+
+        try {
+            bd = new BaseDatos(this);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         clUsuario usu = new clUsuario();
         EditText nombre = findViewById(R.id.txtNombreU);
         EditText dniU = findViewById(R.id.txtDNIu);
@@ -68,8 +73,8 @@ public class Usuario extends AppCompatActivity {
         codigoPostal.setOnFocusChangeListener((view, hasFocus) -> {
             if (!hasFocus)
                 if (codigoPostal.getText().toString().trim().length()== 5){
-                   Funciones f =new Funciones();
-                   provincia.setText(f.sacarProvincia(codigoPostal.getText().toString().trim()));
+                    Funciones f =new Funciones();
+                    provincia.setText(f.sacarProvincia(codigoPostal.getText().toString().trim()));
                 }
 
         });
@@ -80,13 +85,11 @@ public class Usuario extends AppCompatActivity {
             int mm = calendario.get(Calendar.MONTH);
             int ano = calendario.get(Calendar.YEAR);
             DatePickerDialog dialogoFcha = new DatePickerDialog(this, (view, year, month, dayOfMonth) -> {
-                String fecha = String.format("%02d/%02d/%04d", dayOfMonth, month+1, year);
+                @SuppressLint("DefaultLocale") String fecha = String.format("%02d/%02d/%04d", dayOfMonth, month+1, year);
                 fechaNaci.setText(fecha);
             }, ano, mm,dd);
             dialogoFcha.show();
         });
-        clUsuario finalU = u;
-        clUsuario finalU1 = u;
         grabar.setOnClickListener(v->{
             if (nombre.getText().toString().trim().isEmpty()){
                 AlertDialog.Builder builder  = new AlertDialog.Builder(this);
@@ -106,18 +109,17 @@ public class Usuario extends AppCompatActivity {
                 usu.setFechanacimiento(fechaNaci.getText().toString().trim());
                 usu.setTelefono(telefono.getText().toString().trim());
                 usu.setEmail(email.getText().toString().trim());
-                usu.setActivo("SI");
                 usuRepo = new UsuarioRepository(bd);
                 if (grabar.getText().toString().equals("Guardar cambios")){
                     if (!u.equals(usu)){
-                      int n= usuRepo.modificar(usu);
+                        int n= usuRepo.modificar(usu);
                         if (n>0){
                             Toast.makeText(this, "Usuario modificado correctamente", Toast.LENGTH_LONG).show();
                             finish();
                         }
                     }
                     else{
-                       finish();
+                        finish();
                     }
                 } else {
                     try {
@@ -146,7 +148,7 @@ public class Usuario extends AppCompatActivity {
                     }
                 }
             }
-            });
+        });
         cancelar.setOnClickListener(v ->{
             usu.setId("1");
             usu.setNombre(nombre.getText().toString().trim());
@@ -159,7 +161,7 @@ public class Usuario extends AppCompatActivity {
             usu.setTelefono(telefono.getText().toString().trim());
             usu.setEmail(email.getText().toString().trim());
             usu.setActivo("SI");
-            if (!u.equals(usu)){
+            if (Objects.equals(u, usu)){
                 AlertDialog.Builder pantalla = new AlertDialog.Builder(this);
                 pantalla.setTitle("Advertencia");
                 pantalla.setMessage("Se han modificado los datos.\n ¿Deseas guardar los cambios realizados?");
@@ -170,10 +172,11 @@ public class Usuario extends AppCompatActivity {
                     }
                     finish();
                 });
-                pantalla.setNegativeButton("No", (dialog, which) -> {
-                    finish();
-                });
+                pantalla.setNegativeButton("No", (dialog, which) -> finish());
                 pantalla.create().show();
+            }
+            else{
+                finish();
             }
         });
     }

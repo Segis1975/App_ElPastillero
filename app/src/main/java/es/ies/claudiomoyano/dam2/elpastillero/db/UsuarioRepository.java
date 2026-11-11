@@ -3,17 +3,13 @@ package es.ies.claudiomoyano.dam2.elpastillero.db;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.hardware.usb.UsbInterface;
-import android.widget.Toast;
-
-import org.jetbrains.annotations.TestOnly;
 
 import es.ies.claudiomoyano.dam2.elpastillero.clases.clUsuario;
 
 
 public class UsuarioRepository {
-    private SQLiteDatabase midb;
-    public UsuarioRepository( BaseDatos helper) {
+    private final SQLiteDatabase midb;
+    public UsuarioRepository(BaseDatos helper) {
         midb = helper.getWritableDatabase();
     }
 
@@ -29,8 +25,7 @@ public class UsuarioRepository {
         r.put(UsuarioContact.UsuarioEntry.COLUMN_TELEFONO, u.getTelefono());
         r.put(UsuarioContact.UsuarioEntry.COLUMN_EMAIL, u.getEmail());
         r.put(UsuarioContact.UsuarioEntry.COLUMN_ACTIVO,"SI");
-        long resultado = midb.insert(UsuarioContact.UsuarioEntry.TABLE_NAME, null, r);
-        return resultado;
+        return midb.insert(UsuarioContact.UsuarioEntry.TABLE_NAME, null, r);
     }
 
     public clUsuario Busqueda() {
@@ -77,13 +72,12 @@ public class UsuarioRepository {
         r.put(UsuarioContact.UsuarioEntry.COLUMN_TELEFONO, u.getTelefono());
         r.put(UsuarioContact.UsuarioEntry.COLUMN_EMAIL, u.getEmail());
         r.put(UsuarioContact.UsuarioEntry.COLUMN_ACTIVO,"SI");
-        int filas =  midb.update(
+
+        return midb.update(
                 UsuarioContact.UsuarioEntry.TABLE_NAME,
                 r,
                 UsuarioContact.UsuarioEntry.COLUMN_IDUSUARIO + " = ?",
-                new String[]{String.valueOf("1")}
+                new String[]{"1"}
         );
-
-        return filas;
     }
 }

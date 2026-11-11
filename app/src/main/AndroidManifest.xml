@@ -98,7 +98,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Familiar"
+            android:name=".Contacto"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
