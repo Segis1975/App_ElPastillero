@@ -1,6 +1,7 @@
 package es.ies.claudiomoyano.dam2.elpastillero.clases;
 
 public class clUsuario {
+    private String id;
     private String nombre;
     private String DNI;
     private String domicilio;
@@ -13,6 +14,20 @@ public class clUsuario {
     private  String activo;
 
     public clUsuario() {
+    }
+
+    public clUsuario(String id, String nombre, String DNI, String domicilio, String localidad, String codigopostal, String provincia, String fechanacimiento, String telefono, String email, String activo) {
+        this.id = id;
+        this.nombre = nombre;
+        this.DNI = DNI;
+        this.domicilio = domicilio;
+        this.localidad = localidad;
+        this.codigopostal = codigopostal;
+        this.provincia = provincia;
+        this.fechanacimiento = fechanacimiento;
+        this.telefono = telefono;
+        this.email = email;
+        this.activo = activo;
     }
 
     public clUsuario(String nombre, String DNI, String domicilio, String localidad, String codigopostal, String provincia, String fechanacimiento, String telefono, String email, String activo) {
@@ -32,6 +47,22 @@ public class clUsuario {
         this.nombre = nombre;
         this.DNI = DNI;
         this.activo = activo;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
     }
 
     public String getNombre() {

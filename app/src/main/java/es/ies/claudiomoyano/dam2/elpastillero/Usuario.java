@@ -1,9 +1,11 @@
 package es.ies.claudiomoyano.dam2.elpastillero;
 
 import static es.ies.claudiomoyano.dam2.elpastillero.R.id.btnGrabarU;
+import static es.ies.claudiomoyano.dam2.elpastillero.R.id.txtDomicilioU;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -23,7 +25,8 @@ import es.ies.claudiomoyano.dam2.elpastillero.db.BaseDatos;
 import es.ies.claudiomoyano.dam2.elpastillero.db.UsuarioRepository;
 
 public class Usuario extends AppCompatActivity {
-
+    clUsuario u = new clUsuario();
+    UsuarioRepository usuRepo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +37,8 @@ public class Usuario extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        BaseDatos bd = new BaseDatos(this);
+        clUsuario usu = new clUsuario();
         EditText nombre = findViewById(R.id.txtNombreU);
         EditText dniU = findViewById(R.id.txtDNIu);
         EditText domicilio = findViewById(R.id.txtDomicilioU);
@@ -47,8 +51,7 @@ public class Usuario extends AppCompatActivity {
         Button grabar = findViewById(btnGrabarU);
         Button cancelar = findViewById(R.id.btnCancelarU);
         BaseDatos bdHelper = new BaseDatos(this);
-        clUsuario u = new clUsuario();
-        UsuarioRepository usuRepo = new UsuarioRepository(bdHelper);
+        usuRepo = new UsuarioRepository(bdHelper);
         u = usuRepo.Busqueda();
         nombre.setText(u.getNombre());
         dniU.setText(u.getDNI());
@@ -62,11 +65,6 @@ public class Usuario extends AppCompatActivity {
         if (!nombre.getText().toString().trim().isEmpty()){
             grabar.setText("Guardar cambios");
         }
-        else{
-            Toast.makeText(this, "nOOOOO  HAT", Toast.LENGTH_LONG).show();
-
-        }
-        cancelar.setOnClickListener(v -> finish());
         codigoPostal.setOnFocusChangeListener((view, hasFocus) -> {
             if (!hasFocus)
                 if (codigoPostal.getText().toString().trim().length()== 5){
@@ -75,7 +73,6 @@ public class Usuario extends AppCompatActivity {
                 }
 
         });
-
         fechaNaci.setOnClickListener(v-> {
             Toast.makeText(this, "444444444", Toast.LENGTH_SHORT).show();
             Calendar calendario = Calendar.getInstance();
@@ -89,6 +86,7 @@ public class Usuario extends AppCompatActivity {
             dialogoFcha.show();
         });
         clUsuario finalU = u;
+        clUsuario finalU1 = u;
         grabar.setOnClickListener(v->{
             if (nombre.getText().toString().trim().isEmpty()){
                 AlertDialog.Builder builder  = new AlertDialog.Builder(this);
@@ -98,31 +96,33 @@ public class Usuario extends AppCompatActivity {
                 builder.create().show();
             }
             else {
+                usu.setId("1");
+                usu.setNombre(nombre.getText().toString().trim());
+                usu.setDNI(dniU.getText().toString().trim());
+                usu.setDomicilio(domicilio.getText().toString().trim());
+                usu.setLocalidad(localidad.getText().toString().trim());
+                usu.setCodigopostal(codigoPostal.getText().toString().trim());
+                usu.setprovincia(provincia.getText().toString().trim());
+                usu.setFechanacimiento(fechaNaci.getText().toString().trim());
+                usu.setTelefono(telefono.getText().toString().trim());
+                usu.setEmail(email.getText().toString().trim());
+                usu.setActivo("SI");
+                usuRepo = new UsuarioRepository(bd);
                 if (grabar.getText().toString().equals("Guardar cambios")){
-                   if (!nombre.getText().toString().trim().equals(finalU.getNombre())){
-                       Toast.makeText(this, "Cambio", Toast.LENGTH_SHORT).show();
-                   } else{
-                       Toast.makeText(this, "NO", Toast.LENGTH_LONG).show();
-                   }
+                    if (!u.equals(usu)){
+                      int n= usuRepo.modificar(usu);
+                        if (n>0){
+                            Toast.makeText(this, "Usuario modificado correctamente", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                    }
+                    else{
+                       finish();
+                    }
                 } else {
-                    clUsuario usu = new clUsuario();
-                    usu.setNombre(nombre.getText().toString().trim());
-                    usu.setDNI(dniU.getText().toString().trim());
-                    usu.setDomicilio(domicilio.getText().toString().trim());
-                    usu.setLocalidad(localidad.getText().toString().trim());
-                    usu.setCodigopostal(codigoPostal.getText().toString().trim());
-                    usu.setprovincia(provincia.getText().toString().trim());
-                    usu.setFechanacimiento(fechaNaci.getText().toString().trim());
-                    usu.setTelefono(telefono.getText().toString().trim());
-                    usu.setEmail(email.getText().toString().trim());
-                    usu.setActivo("SI");
-
-                    // 1) Abrimos la base de datos (crea las tablas la primera vez).
-                    BaseDatos bdHelper1 = new BaseDatos(this);
                     try {
                         // 2) Insertamos el usuario y recogemos el id generado.
-                        UsuarioRepository usuRepo1 = new UsuarioRepository(bdHelper1);
-                        long id = usuRepo1.insertarusuario(usu);
+                        long id = usuRepo.insertarusuario(usu);
 
                         // 3) insert() devuelve -1 si no se pudo insertar
                         //    (por ejemplo, si el DNI ya existe: columna UNIQUE).
@@ -147,5 +147,34 @@ public class Usuario extends AppCompatActivity {
                 }
             }
             });
+        cancelar.setOnClickListener(v ->{
+            usu.setId("1");
+            usu.setNombre(nombre.getText().toString().trim());
+            usu.setDNI(dniU.getText().toString().trim());
+            usu.setDomicilio(domicilio.getText().toString().trim());
+            usu.setLocalidad(localidad.getText().toString().trim());
+            usu.setCodigopostal(codigoPostal.getText().toString().trim());
+            usu.setprovincia(provincia.getText().toString().trim());
+            usu.setFechanacimiento(fechaNaci.getText().toString().trim());
+            usu.setTelefono(telefono.getText().toString().trim());
+            usu.setEmail(email.getText().toString().trim());
+            usu.setActivo("SI");
+            if (!u.equals(usu)){
+                AlertDialog.Builder pantalla = new AlertDialog.Builder(this);
+                pantalla.setTitle("Advertencia");
+                pantalla.setMessage("Se han modificado los datos.\n ¿Deseas guardar los cambios realizados?");
+                pantalla.setPositiveButton("Si", (dialog, which) -> {
+                    int n= usuRepo.modificar(usu);
+                    if (n>0){
+                        Toast.makeText(this, "Usuario modificado correctamente", Toast.LENGTH_LONG).show();
+                    }
+                    finish();
+                });
+                pantalla.setNegativeButton("No", (dialog, which) -> {
+                    finish();
+                });
+                pantalla.create().show();
+            }
+        });
     }
 }
