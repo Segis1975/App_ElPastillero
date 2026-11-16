@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="verde_primario">#66BB6A</color>
+    <color name="verde_oscuro">#1B5E20</color>
+    <color name="verde_claro">#2E7D32</color>
+    <color name="acento">#FFD54F</color>
+    <color name="acento_oscuro">#C17900</color>
+    <color name="fondo">#121212</color>
+    <color name="tarjeta">#1E1E1E</color>
+    <color name="texto">#ECEFF1</color>
+    <color name="texto_secundario">#B0BEC5</color>
+    <color name="gris">#9E9E9E</color>
+    <color name="rojo">#EF9A9A</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro">#000000</color>
+</resources>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margen">
+
+        <TextView
+            android:id="@+id/txtTituloForm"
+            style="@style/Estilo.Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/form_nuevo" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_nombre"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etPrincipio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_principio"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etDosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_dosis"
+            android:inputType="text"
+            android:maxLines="1" />
+
+        <TextView
+            android:id="@+id/txtUnidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno" />
+
+        <SeekBar
+            android:id="@+id/seekUnidades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="9"
+            android:progress="0" />
+
+        <EditText
+            android:id="@+id/etStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_stock"
+            android:inputType="number"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etStockMinimo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_stock_minimo"
+            android:inputType="number"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/etFrecuencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_frecuencia"
+            android:inputType="number"
+            android:maxLines="1" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/form_tipo" />
+
+        <Spinner
+            android:id="@+id/spTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/form_presentacion" />
+
+        <Spinner
+            android:id="@+id/spPresentacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/form_estado" />
+
+        <RadioGroup
+            android:id="@+id/rgEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbActivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/estado_activo" />
+
+            <RadioButton
+                android:id="@+id/rbPausado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estado_pausado" />
+
+            <RadioButton
+                android:id="@+id/rbFinalizado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estado_finalizado" />
+        </RadioGroup>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swRecordatorio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/form_recordatorio" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swFavorito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/form_favorito" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/form_valoracion" />
+
+        <RatingBar
+            android:id="@+id/ratingValoracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0"
+            android:stepSize="1" />
+
+        <Button
+            android:id="@+id/btnFechaInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/form_elegir_fecha" />
+
+        <TextView
+            android:id="@+id/txtFechaInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_pequeno"
+            android:textColor="@color/texto_secundario" />
+
+        <EditText
+            android:id="@+id/etNotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/form_notas"
+            android:inputType="textMultiLine"
+            android:minLines="2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/guardar" />
+
+            <Button
+                android:id="@+id/btnCancelarForm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_pequeno"
+                android:layout_weight="1"
+                android:text="@string/cancelar" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

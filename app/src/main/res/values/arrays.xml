@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tipos de medicamento -->
+    <string-array name="tipos">
+        <item>@string/tipo_pastilla</item>
+        <item>@string/tipo_jarabe</item>
+        <item>@string/tipo_inyeccion</item>
+    </string-array>
+
+    <!-- Presentaciones dependientes del tipo (spinners encadenados) -->
+    <string-array name="presentaciones_pastilla">
+        <item>Comprimidos</item>
+        <item>Cápsulas</item>
+        <item>Efervescentes</item>
+        <item>Masticables</item>
+    </string-array>
+
+    <string-array name="presentaciones_jarabe">
+        <item>Jarabe</item>
+        <item>Suspensión</item>
+        <item>Gotas</item>
+        <item>Solubles</item>
+    </string-array>
+
+    <string-array name="presentaciones_inyeccion">
+        <item>Vial</item>
+        <item>Pluma precargada</item>
+        <item>Ampolla</item>
+        <item>Jeringa precargada</item>
+    </string-array>
+
+    <!-- Especialidades para las citas médicas -->
+    <string-array name="especialidades">
+        <item>Medicina general</item>
+        <item>Cardiología</item>
+        <item>Endocrinología</item>
+        <item>Neurología</item>
+        <item>Traumatología</item>
+        <item>Oftalmología</item>
+        <item>Otra</item>
+    </string-array>
+</resources>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margen">
+
+        <TextView
+            style="@style/Estilo.Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ajustes_accesibilidad" />
+
+        <TextView
+            android:id="@+id/txtTamano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno" />
+
+        <SeekBar
+            android:id="@+id/seekLetra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="6"
+            android:progress="2" />
+
+        <TextView
+            android:id="@+id/txtEjemplo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_pequeno"
+            android:text="@string/ajustes_ejemplo"
+            android:textColor="@color/texto_secundario"
+            android:textStyle="italic" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/ajustes_notificaciones" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ajustes_notificaciones_info"
+            android:textColor="@color/gris"
+            android:textSize="12sp" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/ajustes_tema" />
+
+        <RadioGroup
+            android:id="@+id/rgTema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbSistema"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajustes_tema_sistema" />
+
+            <RadioButton
+                android:id="@+id/rbClaro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajustes_tema_claro" />
+
+            <RadioButton
+                android:id="@+id/rbOscuro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ajustes_tema_oscuro" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/ajustes_perfil" />
+
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/cerrar_sesion" />
+
+        <Button
+            android:id="@+id/btnBorrarCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/ajustes_borrar_cuenta"
+            android:textColor="@color/rojo" />
+
+    </LinearLayout>
+</ScrollView>

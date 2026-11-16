@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Estilo.Tarjeta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margen_pequeno"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/margen">
+
+        <CheckBox
+            android:id="@+id/chkToma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margen_pequeno"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTomaMedicamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtTomaFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txtTomaCantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texto_secundario" />
+
+            <TextView
+                android:id="@+id/txtTomaEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texto_secundario" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgTomaEstado"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/toma_tomada"
+            android:src="@drawable/ic_check_circle"
+            android:visibility="gone"
+            app:tint="@color/verde_primario" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

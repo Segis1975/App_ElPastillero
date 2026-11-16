@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Aplicación -->
+    <string name="app_name">El Pastillero</string>
+    <string name="app_slogan">Tu medicación, siempre a mano</string>
+
+    <!-- Login -->
+    <string name="login_title">Bienvenido a El Pastillero</string>
+    <string name="login_subtitle">Controla tus medicamentos, tomas y citas</string>
+    <string name="login_demo">Demo: sergio@pastillero.es / 1234</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="btn_login">Entrar</string>
+    <string name="recordarme">Recordarme</string>
+    <string name="no_tengo_cuenta">¿No tienes cuenta? Crear una</string>
+    <string name="error_campos">Rellena todos los campos</string>
+    <string name="error_credenciales">Correo o contraseña incorrectos</string>
+    <string name="error_email_existe">Ese correo ya está registrado</string>
+    <string name="error_email">Introduce un correo válido</string>
+    <string name="error_password_corta">La contraseña debe tener al menos 4 caracteres</string>
+    <string name="registro_titulo">Nueva cuenta</string>
+    <string name="btn_registrar">Crear cuenta</string>
+    <string name="registro_ok">Cuenta creada correctamente</string>
+    <string name="bienvenida_usuario">Hola, %1$s</string>
+
+    <!-- Comunes -->
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="anadir">Añadir</string>
+    <string name="volver">Volver</string>
+    <string name="buscar">Buscar</string>
+    <string name="ordenar">Ordenar</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="guardado_ok">Guardado correctamente</string>
+    <string name="borrado_ok">Eliminado correctamente</string>
+    <string name="error_generico">Ha ocurrido un error</string>
+    <string name="no_disponible">No disponible</string>
+    <string name="sin_notas">Sin notas</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+
+    <!-- Menú lateral -->
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_medicamentos">Medicamentos</string>
+    <string name="menu_tomas">Control de tomas</string>
+    <string name="menu_citas">Citas médicas</string>
+    <string name="menu_favoritos">Mi lista personal</string>
+    <string name="menu_ajustes">Ajustes</string>
+    <string name="menu_acerca">Acerca de</string>
+    <string name="nav_subtitulo">Cuenta de demostración</string>
+    <string name="abrir_menu">Abrir menú</string>
+    <string name="cerrar_menu">Cerrar menú</string>
+
+    <!-- Inicio -->
+    <string name="main_resumen">Resumen de hoy</string>
+    <string name="main_medicamentos">Medicamentos</string>
+    <string name="main_stock_bajo">Con stock bajo</string>
+    <string name="main_tomas_pendientes">Tomas pendientes</string>
+    <string name="main_stock_global">Stock general</string>
+    <string name="main_ir_medicamentos">Ver medicamentos</string>
+    <string name="main_ir_tomas">Ver tomas</string>
+    <string name="main_ir_citas">Ver citas</string>
+    <string name="main_sin_datos">Todavía no hay datos</string>
+
+    <!-- Medicamentos -->
+    <string name="med_titulo">Medicamentos</string>
+    <string name="med_vacio">No hay medicamentos. Pulsa + para añadir el primero.</string>
+    <string name="med_buscar">Buscar por nombre o principio activo</string>
+    <string name="med_orden_nombre">Por nombre</string>
+    <string name="med_orden_stock">Por stock</string>
+    <string name="med_orden_valoracion">Por valoración</string>
+    <string name="med_anadir">Añadir medicamento</string>
+    <string name="med_stock_bajo">Stock bajo</string>
+    <string name="med_unidades">%1$d uds.</string>
+
+    <!-- Ficha -->
+    <string name="detalle_titulo">Ficha del medicamento</string>
+    <string name="detalle_principio">Principio activo</string>
+    <string name="detalle_dosis">Dosis</string>
+    <string name="detalle_stock">Stock</string>
+    <string name="detalle_stock_valor">%1$d unidades (mínimo %2$d)</string>
+    <string name="detalle_valoracion">Valoración</string>
+    <string name="detalle_estado">Estado</string>
+    <string name="detalle_fecha_inicio">Inicio del tratamiento</string>
+    <string name="detalle_notas">Notas</string>
+    <string name="detalle_favorito">Añadir a mi lista personal</string>
+    <string name="detalle_tomas">Tomas registradas</string>
+    <string name="detalle_sin_tomas">Sin tomas registradas</string>
+    <string name="detalle_anadir_toma">Registrar toma</string>
+    <string name="detalle_eliminar_titulo">Eliminar medicamento</string>
+    <string name="detalle_eliminar_msg">Se eliminará el medicamento y todas sus tomas. ¿Continuar?</string>
+    <string name="detalle_no_encontrado">Medicamento no encontrado</string>
+
+    <!-- Estados -->
+    <string name="estado_activo">Activo</string>
+    <string name="estado_pausado">Pausado</string>
+    <string name="estado_finalizado">Finalizado</string>
+
+    <!-- Formulario -->
+    <string name="form_nuevo">Nuevo medicamento</string>
+    <string name="form_editar">Editar medicamento</string>
+    <string name="form_nombre">Nombre *</string>
+    <string name="form_principio">Principio activo</string>
+    <string name="form_dosis">Dosis (por ejemplo, 1 comprimido cada 8 h)</string>
+    <string name="form_unidades">Unidades por toma: %1$d</string>
+    <string name="form_stock">Stock actual</string>
+    <string name="form_stock_minimo">Stock mínimo</string>
+    <string name="form_frecuencia">Frecuencia (horas)</string>
+    <string name="form_tipo">Tipo</string>
+    <string name="form_presentacion">Presentación</string>
+    <string name="form_estado">Estado</string>
+    <string name="form_recordatorio">Recordatorio activo</string>
+    <string name="form_favorito">Favorito</string>
+    <string name="form_valoracion">Valoración</string>
+    <string name="form_fecha_inicio">Fecha de inicio</string>
+    <string name="form_elegir_fecha">Elegir fecha y hora</string>
+    <string name="form_notas">Notas</string>
+    <string name="form_nombre_obligatorio">El nombre es obligatorio</string>
+    <string name="form_numero_invalido">Revisa los campos numéricos</string>
+    <string name="form_guardado">Medicamento guardado</string>
+    <string name="form_actualizado">Medicamento actualizado</string>
+    <string name="form_error">No se pudo guardar</string>
+
+    <!-- Tipos -->
+    <string name="tipo_pastilla">Pastilla</string>
+    <string name="tipo_jarabe">Jarabe</string>
+    <string name="tipo_inyeccion">Inyección</string>
+
+    <!-- Tomas -->
+    <string name="tomas_titulo">Control de tomas</string>
+    <string name="tomas_vacio">No hay tomas registradas</string>
+    <string name="toma_pendiente">Pendiente</string>
+    <string name="toma_tomada">Tomada</string>
+    <string name="toma_cantidad">%1$d unidades</string>
+    <string name="toma_medicamento">Medicamento: %1$s</string>
+    <string name="toma_anadir">Registrar toma</string>
+    <string name="toma_elegir_medicamento">Elige un medicamento</string>
+    <string name="toma_sin_medicamentos">Primero crea un medicamento</string>
+    <string name="toma_marcada">Toma registrada</string>
+    <string name="toma_marcar">Marcar como tomada</string>
+    <string name="toma_fecha">Fecha y hora</string>
+    <string name="toma_sin_stock">No queda stock suficiente</string>
+
+    <!-- Citas -->
+    <string name="citas_titulo">Citas médicas</string>
+    <string name="citas_vacio">No tienes citas. Pulsa + para añadir una.</string>
+    <string name="cita_especialidad">Especialidad</string>
+    <string name="cita_medico">Médico</string>
+    <string name="cita_lugar">Lugar</string>
+    <string name="cita_fecha">Fecha</string>
+    <string name="cita_hora">Hora</string>
+    <string name="cita_notas">Notas</string>
+    <string name="cita_nueva">Nueva cita</string>
+    <string name="cita_editar">Editar cita</string>
+    <string name="cita_guardada">Cita guardada</string>
+    <string name="cita_actualizada">Cita actualizada</string>
+    <string name="cita_eliminar_titulo">Eliminar cita</string>
+    <string name="cita_eliminar_msg">¿Seguro que quieres eliminar esta cita?</string>
+    <string name="cita_fecha_hora">%1$s a las %2$s</string>
+    <string name="cita_sin_fecha">Sin fecha</string>
+    <string name="cita_falta_fecha">Selecciona la fecha y la hora de la cita</string>
+
+    <!-- Lista personal -->
+    <string name="fav_titulo">Mi lista personal</string>
+    <string name="fav_vacio">Tu lista personal está vacía</string>
+    <string name="fav_anadir">Añadir a mi lista</string>
+    <string name="fav_elegir">Elige un medicamento</string>
+    <string name="fav_sin_medicamentos">No hay medicamentos disponibles</string>
+    <string name="fav_quitar">Quitar de mi lista</string>
+    <string name="fav_quitar_titulo">Quitar de la lista</string>
+    <string name="fav_quitar_msg">¿Quitar este medicamento de tu lista personal?</string>
+    <string name="fav_nota">Editar nota</string>
+    <string name="fav_nota_hint">Nota personal</string>
+    <string name="fav_ya_esta">Ya está en tu lista</string>
+    <string name="fav_nota_guardada">Nota guardada</string>
+
+    <!-- Ajustes -->
+    <string name="ajustes_titulo">Ajustes</string>
+    <string name="ajustes_accesibilidad">Accesibilidad</string>
+    <string name="ajustes_tamano_letra">Tamaño de letra: %1$d %%</string>
+    <string name="ajustes_ejemplo">Así se verá el texto de la aplicación</string>
+    <string name="ajustes_notificaciones">Avisos de recordatorio</string>
+    <string name="ajustes_notificaciones_info">Los avisos se muestran dentro de la aplicación en esta versión</string>
+    <string name="ajustes_tema">Tema</string>
+    <string name="ajustes_tema_sistema">Sistema</string>
+    <string name="ajustes_tema_claro">Claro</string>
+    <string name="ajustes_tema_oscuro">Oscuro</string>
+    <string name="ajustes_perfil">Mi perfil</string>
+    <string name="ajustes_borrar_cuenta">Borrar mi cuenta</string>
+    <string name="ajustes_borrar_cuenta_msg">Se eliminarán tu cuenta, tu lista personal y tus citas. Esta acción no se puede deshacer.</string>
+    <string name="ajustes_cuenta_borrada">Cuenta eliminada</string>
+    <string name="perfil_titulo">Editar perfil</string>
+    <string name="perfil_guardado">Perfil actualizado</string>
+    <string name="perfil_email_ocupado">Ese correo ya está en uso</string>
+    <string name="ajustes_notif_activadas">Recordatorios activados</string>
+    <string name="ajustes_notif_desactivadas">Recordatorios desactivados</string>
+
+    <!-- Diálogos -->
+    <string name="dialogo_fecha_hora">Fecha y hora</string>
+    <string name="dialogo_confirmar">Confirmar</string>
+    <string name="fecha_seleccionada">%1$s</string>
+
+    <!-- Acerca de -->
+    <string name="acerca_version">Versión %1$s</string>
+    <string name="acerca_descripcion">El Pastillero es una aplicación para organizar la medicación diaria: permite dar de alta medicamentos, controlar el stock, registrar las tomas y las citas médicas, y mantener una lista personal de seguimiento para cada usuario.</string>
+    <string name="acerca_autor">Desarrollado por Sergio · IES Claudio Moyano · DAM 2</string>
+    <string name="acerca_repo">Repositorio del proyecto en GitHub</string>
+    <string name="acerca_tecnologias">Tecnologías: Java, Android, SQLite, Room y Material Components</string>
+    <string name="acerca_manual">Manual de usuario y manual técnico incluidos en la carpeta docs del repositorio.</string>
+    <string name="acerca_no_navegador">No hay ninguna aplicación de navegador disponible</string>
+
+    <!-- Accesibilidad -->
+    <string name="cd_logo">Logotipo de El Pastillero</string>
+    <string name="cd_medicamento">Icono de medicamento</string>
+    <string name="cd_alerta">Aviso de stock bajo</string>
+    <string name="cd_avatar">Avatar del usuario</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/verde_primario"
+    android:orientation="vertical"
+    android:padding="@dimen/margen_grande">
+
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/cd_avatar"
+        android:src="@drawable/ic_person"
+        android:tint="@color/blanco" />
+
+    <TextView
+        android:id="@+id/txtNavNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_pequeno"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtNavEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/verde_claro" />
+
+</LinearLayout>

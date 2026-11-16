@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margen">
+
+        <ImageView
+            android:id="@+id/imgIconoDetalle"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/cd_medicamento"
+            android:src="@drawable/ic_pill"
+            app:tint="@color/verde_primario" />
+
+        <TextView
+            android:id="@+id/txtNombreDetalle"
+            style="@style/Estilo.Titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtPrincipioDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/texto_secundario" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Estilo.Etiqueta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/margen_pequeno"
+                    android:text="@string/detalle_stock" />
+
+                <TextView
+                    android:id="@+id/txtStock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingTop="@dimen/margen_pequeno" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Estilo.Etiqueta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/margen_pequeno"
+                    android:text="@string/detalle_dosis" />
+
+                <TextView
+                    android:id="@+id/txtDosis"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingTop="@dimen/margen_pequeno" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Estilo.Etiqueta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/margen_pequeno"
+                    android:text="@string/detalle_estado" />
+
+                <TextView
+                    android:id="@+id/txtEstado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingTop="@dimen/margen_pequeno" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Estilo.Etiqueta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/margen_pequeno"
+                    android:text="@string/detalle_fecha_inicio" />
+
+                <TextView
+                    android:id="@+id/txtFechaInicio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingTop="@dimen/margen_pequeno" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Estilo.Etiqueta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/margen_pequeno"
+                    android:text="@string/detalle_valoracion" />
+
+                <RatingBar
+                    android:id="@+id/ratingDetalle"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:stepSize="1" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Estilo.Etiqueta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/margen_pequeno"
+                    android:text="@string/detalle_notas" />
+
+                <TextView
+                    android:id="@+id/txtNotas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingTop="@dimen/margen_pequeno" />
+            </TableRow>
+        </TableLayout>
+
+        <ProgressBar
+            android:id="@+id/pbStockDetalle"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:max="50"
+            android:progress="0" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swFavorito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/detalle_favorito" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/editar" />
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_pequeno"
+                android:layout_weight="1"
+                android:text="@string/eliminar" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen"
+            android:text="@string/detalle_tomas"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTomas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/txtSinTomas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_pequeno"
+            android:text="@string/detalle_sin_tomas"
+            android:textColor="@color/texto_secundario"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnAnadirToma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:text="@string/detalle_anadir_toma" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

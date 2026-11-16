@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tipos">
+        <item>@string/tipo_pastilla</item>
+        <item>@string/tipo_jarabe</item>
+        <item>@string/tipo_inyeccion</item>
+    </string-array>
+
+    <string-array name="presentaciones_pastilla">
+        <item>Tablets</item>
+        <item>Capsules</item>
+        <item>Effervescent</item>
+        <item>Chewable</item>
+    </string-array>
+
+    <string-array name="presentaciones_jarabe">
+        <item>Syrup</item>
+        <item>Suspension</item>
+        <item>Drops</item>
+        <item>Soluble</item>
+    </string-array>
+
+    <string-array name="presentaciones_inyeccion">
+        <item>Vial</item>
+        <item>Pre-filled pen</item>
+        <item>Ampoule</item>
+        <item>Pre-filled syringe</item>
+    </string-array>
+
+    <string-array name="especialidades">
+        <item>General medicine</item>
+        <item>Cardiology</item>
+        <item>Endocrinology</item>
+        <item>Neurology</item>
+        <item>Traumatology</item>
+        <item>Ophthalmology</item>
+        <item>Other</item>
+    </string-array>
+</resources>

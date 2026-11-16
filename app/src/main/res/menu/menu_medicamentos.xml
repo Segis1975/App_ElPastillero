@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_buscar"
+        android:icon="@drawable/ic_search"
+        android:title="@string/buscar"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_ordenar"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/ordenar"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/orden_nombre"
+                android:title="@string/med_orden_nombre" />
+            <item
+                android:id="@+id/orden_stock"
+                android:title="@string/med_orden_stock" />
+            <item
+                android:id="@+id/orden_valoracion"
+                android:title="@string/med_orden_valoracion" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_anadir"
+        android:icon="@drawable/ic_add"
+        android:title="@string/anadir"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_acerca"
+        android:icon="@drawable/ic_info"
+        android:title="@string/acerca_de"
+        app:showAsAction="never" />
+</menu>

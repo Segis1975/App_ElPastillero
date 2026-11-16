@@ -1,0 +1,4 @@
+// Proyecto raíz. Solo declara el plugin de Android; la configuración real está en app/build.gradle.
+plugins {
+    id 'com.android.application' version '8.3.2' apply false
+}

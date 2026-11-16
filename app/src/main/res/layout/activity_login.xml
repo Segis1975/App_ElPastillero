@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:padding="@dimen/margen_grande">
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:contentDescription="@string/cd_logo"
+        android:src="@drawable/ic_pill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/verde_primario" />
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        style="@style/Estilo.Titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:gravity="center"
+        android:text="@string/login_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+    <TextView
+        android:id="@+id/txtSubtitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_pequeno"
+        android:gravity="center"
+        android:text="@string/login_subtitle"
+        android:textColor="@color/texto_secundario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitulo" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_grande"
+        android:autofillHints="emailAddress"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSubtitulo" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_pequeno"
+        android:autofillHints="password"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+    <CheckBox
+        android:id="@+id/chkRecordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_pequeno"
+        android:text="@string/recordarme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:text="@string/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chkRecordar" />
+
+    <TextView
+        android:id="@+id/txtRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen"
+        android:gravity="center"
+        android:padding="@dimen/margen_pequeno"
+        android:text="@string/no_tengo_cuenta"
+        android:textColor="@color/verde_primario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+    <TextView
+        android:id="@+id/txtDemo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/login_demo"
+        android:textColor="@color/gris"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
