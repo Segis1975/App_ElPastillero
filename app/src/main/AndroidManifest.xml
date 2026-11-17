@@ -21,7 +21,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ElPastillero.SinActionBar" />
         <activity
             android:name=".MedicamentoListActivity"
             android:exported="false" />

@@ -29,4 +29,21 @@
         <item name="android:textColor">@color/texto_secundario</item>
     </style>
 
+    <!-- Variante sin ActionBar para la pantalla principal: usa una MaterialToolbar
+         propia dentro del layout y así el menú lateral no queda tapado. -->
+    <style name="Theme.ElPastillero.SinActionBar" parent="Theme.ElPastillero">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+        <style name="Estilo" parent="Theme.Material3.DayNight.NoActionBar">
+            <!-- Personalización del tema -->
+            <item name="colorPrimary">#2196F3</item>
+            <item name="colorSecondary">#03A9F4</item>
+        </style>
+
+
 </resources>

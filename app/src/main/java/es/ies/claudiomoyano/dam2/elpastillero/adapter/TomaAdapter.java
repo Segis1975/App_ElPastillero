@@ -83,7 +83,8 @@ public class TomaAdapter extends RecyclerView.Adapter<TomaAdapter.ViewHolder>
         holder.medicamento.setText(contexto.getString(R.string.toma_medicamento, detalle.nombreMedicamento));
         holder.medicamento.setVisibility(mostrarMedicamento ? View.VISIBLE : View.GONE);
         holder.fecha.setText(FechaUtil.fechaHora(detalle.toma.fechaHora));
-        holder.cantidad.setText(contexto.getString(R.string.toma_cantidad, detalle.toma.cantidad));
+        holder.cantidad.setText(contexto.getResources().getQuantityString(
+                R.plurals.toma_cantidad, detalle.toma.cantidad, detalle.toma.cantidad));
         holder.estado.setText(detalle.toma.tomada ? R.string.toma_tomada : R.string.toma_pendiente);
         holder.estado.setTextColor(ContextCompat.getColor(contexto,
                 detalle.toma.tomada ? R.color.verde_primario : R.color.texto_secundario));

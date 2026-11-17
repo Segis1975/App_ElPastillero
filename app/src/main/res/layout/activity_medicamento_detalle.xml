@@ -17,8 +17,7 @@
             android:layout_height="64dp"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/cd_medicamento"
-            android:src="@drawable/ic_pill"
-            app:tint="@color/verde_primario" />
+            android:src="@drawable/ic_pill" />
 
         <TextView
             android:id="@+id/txtNombreDetalle"
@@ -113,27 +112,46 @@
                     android:paddingTop="@dimen/margen_pequeno" />
             </TableRow>
 
-            <TableRow>
+        </TableLayout>
 
-                <TextView
-                    style="@style/Estilo.Etiqueta"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingTop="@dimen/margen_pequeno"
-                    android:text="@string/detalle_valoracion" />
+        <!-- La valoración se saca del TableLayout: dentro de una TableRow con
+             columnas estiradas el RatingBar escalaba las estrellas hasta ocupar
+             toda la fila y dejaba un hueco vertical enorme. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/margen_pequeno">
+
+            <TextView
+                style="@style/Estilo.Etiqueta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/detalle_valoracion" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal">
 
                 <RatingBar
                     android:id="@+id/ratingDetalle"
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
                     android:isIndicator="true"
                     android:numStars="5"
                     android:rating="0"
                     android:stepSize="1" />
-            </TableRow>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
 
             <TableRow>
 

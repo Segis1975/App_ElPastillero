@@ -1,6 +1,14 @@
 # Manual de usuario
 
-Este manual explica cómo usar **El Pastillero** con la cuenta de demostración.
+## Introducción
+
+**El Pastillero** es una aplicación Android para organizar la medicación diaria. Permite
+dar de alta medicamentos, controlar el stock, registrar las tomas, anotar las citas
+médicas y mantener una lista personal distinta para cada usuario.
+
+Este manual explica cómo usar la aplicación con la cuenta de demostración, pantalla por
+pantalla. Los datos que se describen se cargan solos la primera vez que se abre la app,
+así que se puede seguir el recorrido completo sin crear nada previamente.
 
 ## 1. Iniciar sesión
 
@@ -130,3 +138,24 @@ repositorio del proyecto.
 - Todos los iconos tienen descripción para los lectores de pantalla.
 - Los colores mantienen contraste alto en tema claro y oscuro.
 - Los controles son grandes y las tarjetas se pueden pulsar en toda su superficie.
+
+## 11. Capturas de pantalla
+
+En la carpeta `docs/capturas/` están las imágenes de cada pantalla tomadas en un emulador
+con una instalación limpia: acceso, inicio, listado, ficha, formulario, tomas, citas, lista
+personal, ajustes, acerca de, el diálogo de fecha y hora y una captura de la interfaz en
+inglés. El anexo final de este manual las reproduce a tamaño de página.
+
+## 12. Bibliografía y webgrafía
+
+- Documentación oficial de Android Developers: <https://developer.android.com/docs>
+- Guía de Material Design 3: <https://m3.material.io/>
+- Guía de accesibilidad de Android: <https://developer.android.com/guide/topics/ui/accessibility>
+- Apuntes y prácticas de la asignatura PMDM (IES Claudio Moyano, curso 2026-27).
+
+## 13. Herramientas de IA utilizadas
+
+Este manual y la revisión final del proyecto se han apoyado en un agente de IA (OpenCode).
+El agente se usó para comprobar el cumplimiento del enunciado, detectar errores de estado al
+girar la pantalla y redactar la documentación a partir del código real. Las decisiones de
+diseño, los datos y las pruebas funcionales en el emulador se han revisado manualmente.

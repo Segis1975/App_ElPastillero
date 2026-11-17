@@ -129,6 +129,12 @@ public class MedicamentoDetalleActivity extends BaseActivity
     }
 
     private void mostrar(Medicamento m, List<TomaDetalle> tomas, boolean favorito) {
+        // En la barra superior se muestra el nombre del medicamento: es más útil
+        // que el título fijo y no se recorta en pantallas estrechas.
+        if (getSupportActionBar() != null && !TextUtils.isEmpty(m.nombre)) {
+            getSupportActionBar().setTitle(m.nombre);
+        }
+
         TextView txtNombre = findViewById(R.id.txtNombreDetalle);
         TextView txtPrincipio = findViewById(R.id.txtPrincipioDetalle);
         TextView txtStock = findViewById(R.id.txtStock);
@@ -141,7 +147,8 @@ public class MedicamentoDetalleActivity extends BaseActivity
 
         txtNombre.setText(m.nombre);
         txtPrincipio.setText(TextUtils.isEmpty(m.principioActivo) ? "" : m.principioActivo);
-        txtStock.setText(getString(R.string.detalle_stock_valor, m.stock, m.stockMinimo));
+        txtStock.setText(getResources().getQuantityString(
+                R.plurals.detalle_stock_valor, m.stock, m.stock, m.stockMinimo));
         txtDosis.setText(TextUtils.isEmpty(m.dosis) ? getString(R.string.no_disponible) : m.dosis);
         txtEstado.setText(getString(textoEstado(m.estado)));
         txtFechaInicio.setText(FechaUtil.fechaHora(m.fechaInicio));
@@ -219,13 +226,16 @@ public class MedicamentoDetalleActivity extends BaseActivity
 
     @Override
     public void onFechaHora(int anio, int mes, int dia, int hora, int minuto) {
-        if (medicamento == null) {
+        if (id <= 0) {
             return;
         }
-        long millis = FechaUtil.aMillis(anio, mes, dia, hora, minuto);
-        int cantidad = Math.max(1, medicamento.unidadesPorToma);
-        long idMedicamento = medicamento.id;
+        final long millis = FechaUtil.aMillis(anio, mes, dia, hora, minuto);
+        final long idMedicamento = id;
         AppExecutors.io(() -> {
+            // Se consulta el medicamento en el hilo de E/S: así el alta de la
+            // toma funciona aunque la ficha aún no haya terminado de cargarse.
+            Medicamento m = room.medicamentoDao().porId(idMedicamento);
+            int cantidad = m == null ? 1 : Math.max(1, m.unidadesPorToma);
             Toma toma = new Toma();
             toma.idMedicamento = idMedicamento;
             toma.fechaHora = millis;

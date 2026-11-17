@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -43,6 +44,11 @@ public class MainActivity extends BaseActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         NavigationView navView = findViewById(R.id.navView);
 
+        // La pantalla usa una toolbar propia (tema sin ActionBar) y el toggle
+        // del menú lateral se engancha directamente a ella.
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         View cabecera = navView.getHeaderView(0);
         TextView txtNavNombre = cabecera.findViewById(R.id.txtNavNombre);
         TextView txtNavEmail = cabecera.findViewById(R.id.txtNavEmail);
@@ -52,11 +58,12 @@ public class MainActivity extends BaseActivity {
         TextView txtBienvenida = findViewById(R.id.txtBienvenida);
         txtBienvenida.setText(getString(R.string.bienvenida_usuario, Sesion.nombre(this)));
 
-        toggle = new ActionBarDrawerToggle(this, drawerLayout,
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.abrir_menu, R.string.cerrar_menu);
         drawerLayout.addDrawerListener(toggle);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle(R.string.app_name);
         }
 
         navView.setNavigationItemSelectedListener(item -> {

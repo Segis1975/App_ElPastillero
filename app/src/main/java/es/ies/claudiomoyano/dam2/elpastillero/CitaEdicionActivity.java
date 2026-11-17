@@ -111,10 +111,14 @@ public class CitaEdicionActivity extends BaseActivity
         etLugar.setText(c.lugar);
         etNotas.setText(c.notas);
         if (!TextUtils.isEmpty(c.especialidad)) {
-            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) spEspecialidad.getAdapter();
-            int posicion = adapter.getPosition(c.especialidad);
-            if (posicion >= 0) {
-                spEspecialidad.setSelection(posicion);
+            // Se busca la posición sin convertir el adaptador: así no hay
+            // "unchecked cast" y funciona con cualquier ArrayAdapter.
+            android.widget.Adapter adaptador = spEspecialidad.getAdapter();
+            for (int i = 0; i < adaptador.getCount(); i++) {
+                if (c.especialidad.contentEquals(String.valueOf(adaptador.getItem(i)))) {
+                    spEspecialidad.setSelection(i);
+                    break;
+                }
             }
         }
         fechaHora = c.fechaHora;

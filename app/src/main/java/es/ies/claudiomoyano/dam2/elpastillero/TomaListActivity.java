@@ -32,7 +32,13 @@ public class TomaListActivity extends BaseActivity
     private AppDatabase room;
     private TomaAdapter adapter;
     private TextView txtVacio;
-    private Medicamento medicamentoElegido;
+    // Se guarda el id (no el objeto) para que el alta de toma sobreviva a un giro
+    // de pantalla mientras el diálogo de fecha y hora está abierto.
+    private long medicamentoElegidoId = -1;
+    private int cantidadElegida = 1;
+
+    private static final String ESTADO_MEDICAMENTO = "estado_medicamento_toma";
+    private static final String ESTADO_CANTIDAD = "estado_cantidad_toma";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,11 @@ public class TomaListActivity extends BaseActivity
 
         room = AppDatabase.get(this);
         txtVacio = findViewById(R.id.txtVacio);
+
+        if (savedInstanceState != null) {
+            medicamentoElegidoId = savedInstanceState.getLong(ESTADO_MEDICAMENTO, -1);
+            cantidadElegida = savedInstanceState.getInt(ESTADO_CANTIDAD, 1);
+        }
 
         RecyclerView recyclerView = findViewById(R.id.rvTomas);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -102,7 +113,9 @@ public class TomaListActivity extends BaseActivity
             new AlertDialog.Builder(this)
                     .setTitle(R.string.toma_elegir_medicamento)
                     .setItems(nombres, (dialogo, which) -> {
-                        medicamentoElegido = lista.get(which);
+                        Medicamento elegido = lista.get(which);
+                        medicamentoElegidoId = elegido.id;
+                        cantidadElegida = Math.max(1, elegido.unidadesPorToma);
                         DialogFechaHora.newInstance(System.currentTimeMillis())
                                 .show(getSupportFragmentManager(), "fecha_toma");
                     })
@@ -113,13 +126,14 @@ public class TomaListActivity extends BaseActivity
 
     @Override
     public void onFechaHora(int anio, int mes, int dia, int hora, int minuto) {
-        if (medicamentoElegido == null) {
+        if (medicamentoElegidoId <= 0) {
             return;
         }
         final long millis = FechaUtil.aMillis(anio, mes, dia, hora, minuto);
-        final long idMedicamento = medicamentoElegido.id;
-        final int cantidad = Math.max(1, medicamentoElegido.unidadesPorToma);
-        medicamentoElegido = null;
+        final long idMedicamento = medicamentoElegidoId;
+        final int cantidad = Math.max(1, cantidadElegida);
+        medicamentoElegidoId = -1;
+        cantidadElegida = 1;
 
         AppExecutors.io(() -> {
             Toma toma = new Toma();
@@ -183,5 +197,12 @@ public class TomaListActivity extends BaseActivity
             return true;
         }
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putLong(ESTADO_MEDICAMENTO, medicamentoElegidoId);
+        outState.putInt(ESTADO_CANTIDAD, cantidadElegida);
     }
 }

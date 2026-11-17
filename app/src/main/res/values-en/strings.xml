@@ -8,6 +8,9 @@
     <string name="login_title">Welcome to El Pastillero</string>
     <string name="login_subtitle">Keep track of your medicines, doses and appointments</string>
     <string name="login_demo">Demo: sergio@pastillero.es / 1234</string>
+    <!-- Demo account credentials (not user interface text). -->
+    <string name="demo_email">sergio@pastillero.es</string>
+    <string name="demo_password">1234</string>
     <string name="hint_email">Email address</string>
     <string name="hint_password">Password</string>
     <string name="hint_nombre">Name</string>
@@ -81,7 +84,10 @@
     <string name="detalle_principio">Active ingredient</string>
     <string name="detalle_dosis">Dose</string>
     <string name="detalle_stock">Stock</string>
-    <string name="detalle_stock_valor">%1$d units (minimum %2$d)</string>
+    <plurals name="detalle_stock_valor">
+        <item quantity="one">%1$d unit (minimum %2$d)</item>
+        <item quantity="other">%1$d units (minimum %2$d)</item>
+    </plurals>
     <string name="detalle_valoracion">Rating</string>
     <string name="detalle_estado">Status</string>
     <string name="detalle_fecha_inicio">Treatment start</string>
@@ -134,7 +140,11 @@
     <string name="tomas_vacio">No doses registered</string>
     <string name="toma_pendiente">Pending</string>
     <string name="toma_tomada">Taken</string>
-    <string name="toma_cantidad">%1$d units</string>
+    <!-- Plural: avoids "1 units" for single-unit doses. -->
+    <plurals name="toma_cantidad">
+        <item quantity="one">%1$d unit</item>
+        <item quantity="other">%1$d units</item>
+    </plurals>
     <string name="toma_medicamento">Medicine: %1$s</string>
     <string name="toma_anadir">Register dose</string>
     <string name="toma_elegir_medicamento">Choose a medicine</string>
@@ -208,6 +218,8 @@
     <string name="acerca_descripcion">El Pastillero is an app to organise daily medication: add medicines, keep track of the stock, register doses and medical appointments, and keep a personal follow-up list for each user.</string>
     <string name="acerca_autor">Developed by Sergio · IES Claudio Moyano · DAM 2</string>
     <string name="acerca_repo">Project repository on GitHub</string>
+    <!-- Single repository URL: change it here only, no Java changes needed. -->
+    <string name="url_repositorio">https://github.com/Sergio/ElPastillero</string>
     <string name="acerca_tecnologias">Technologies: Java, Android, SQLite, Room and Material Components</string>
     <string name="acerca_manual">User manual and technical manual included in the docs folder of the repository.</string>
     <string name="acerca_no_navegador">No browser application available</string>

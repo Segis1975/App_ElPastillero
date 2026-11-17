@@ -8,6 +8,9 @@
     <string name="login_title">Bienvenido a El Pastillero</string>
     <string name="login_subtitle">Controla tus medicamentos, tomas y citas</string>
     <string name="login_demo">Demo: sergio@pastillero.es / 1234</string>
+    <!-- Credenciales de la cuenta de demostración (no son texto de interfaz). -->
+    <string name="demo_email">sergio@pastillero.es</string>
+    <string name="demo_password">1234</string>
     <string name="hint_email">Correo electrónico</string>
     <string name="hint_password">Contraseña</string>
     <string name="hint_nombre">Nombre</string>
@@ -81,7 +84,10 @@
     <string name="detalle_principio">Principio activo</string>
     <string name="detalle_dosis">Dosis</string>
     <string name="detalle_stock">Stock</string>
-    <string name="detalle_stock_valor">%1$d unidades (mínimo %2$d)</string>
+    <plurals name="detalle_stock_valor">
+        <item quantity="one">%1$d unidad (mínimo %2$d)</item>
+        <item quantity="other">%1$d unidades (mínimo %2$d)</item>
+    </plurals>
     <string name="detalle_valoracion">Valoración</string>
     <string name="detalle_estado">Estado</string>
     <string name="detalle_fecha_inicio">Inicio del tratamiento</string>
@@ -134,7 +140,11 @@
     <string name="tomas_vacio">No hay tomas registradas</string>
     <string name="toma_pendiente">Pendiente</string>
     <string name="toma_tomada">Tomada</string>
-    <string name="toma_cantidad">%1$d unidades</string>
+    <!-- Plural: evita "1 unidades" en las tomas de una sola unidad. -->
+    <plurals name="toma_cantidad">
+        <item quantity="one">%1$d unidad</item>
+        <item quantity="other">%1$d unidades</item>
+    </plurals>
     <string name="toma_medicamento">Medicamento: %1$s</string>
     <string name="toma_anadir">Registrar toma</string>
     <string name="toma_elegir_medicamento">Elige un medicamento</string>
@@ -208,6 +218,8 @@
     <string name="acerca_descripcion">El Pastillero es una aplicación para organizar la medicación diaria: permite dar de alta medicamentos, controlar el stock, registrar las tomas y las citas médicas, y mantener una lista personal de seguimiento para cada usuario.</string>
     <string name="acerca_autor">Desarrollado por Sergio · IES Claudio Moyano · DAM 2</string>
     <string name="acerca_repo">Repositorio del proyecto en GitHub</string>
+    <!-- URL única del repositorio: se cambia solo aquí, sin tocar el código Java. -->
+    <string name="url_repositorio">https://github.com/Sergio/ElPastillero</string>
     <string name="acerca_tecnologias">Tecnologías: Java, Android, SQLite, Room y Material Components</string>
     <string name="acerca_manual">Manual de usuario y manual técnico incluidos en la carpeta docs del repositorio.</string>
     <string name="acerca_no_navegador">No hay ninguna aplicación de navegador disponible</string>

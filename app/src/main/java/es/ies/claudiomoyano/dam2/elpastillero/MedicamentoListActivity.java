@@ -40,11 +40,15 @@ public class MedicamentoListActivity extends BaseActivity
     private TextView txtVacio;
     private final List<Medicamento> datos = new ArrayList<>();
     private static final String ESTADO_PENDIENTE = "estado_pendiente_borrar";
+    private static final String ESTADO_FILTRO = "estado_filtro";
+    private static final String ESTADO_ORDEN = "estado_orden";
 
     private String filtro = "";
     private int orden = ORDEN_NOMBRE;
     // Se guarda el id (no el objeto) para que el borrado siga funcionando al rotar.
     private long pendienteBorrarId = -1;
+    // Evita que una búsqueda antigua sobrescriba el resultado de la más reciente.
+    private int generacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,9 @@ public class MedicamentoListActivity extends BaseActivity
 
         if (savedInstanceState != null) {
             pendienteBorrarId = savedInstanceState.getLong(ESTADO_PENDIENTE, -1);
+            // Búsqueda y ordenación se conservan al girar la pantalla.
+            filtro = savedInstanceState.getString(ESTADO_FILTRO, "");
+            orden = savedInstanceState.getInt(ESTADO_ORDEN, ORDEN_NOMBRE);
         }
 
         if (getSupportActionBar() != null) {
@@ -79,13 +86,15 @@ public class MedicamentoListActivity extends BaseActivity
     }
 
     private void cargar() {
+        final int miGeneracion = ++generacion;
         AppExecutors.io(() -> {
             if (filtro.isEmpty()) {
                 return room.medicamentoDao().todos();
             }
             return room.medicamentoDao().buscar("%" + filtro + "%");
         }, lista -> {
-            if (isFinishing() || isDestroyed()) {
+            // Si mientras tanto se ha lanzado otra búsqueda, se descarta.
+            if (miGeneracion != generacion || isFinishing() || isDestroyed()) {
                 return;
             }
             datos.clear();
@@ -130,6 +139,11 @@ public class MedicamentoListActivity extends BaseActivity
         if (buscar != null) {
             SearchView searchView = (SearchView) buscar.getActionView();
             searchView.setQueryHint(getString(R.string.med_buscar));
+            // Al girar, la caja de búsqueda vuelve a mostrar el filtro activo.
+            if (!filtro.isEmpty()) {
+                searchView.setIconified(false);
+                searchView.setQuery(filtro, false);
+            }
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String query) {
@@ -227,5 +241,7 @@ public class MedicamentoListActivity extends BaseActivity
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putLong(ESTADO_PENDIENTE, pendienteBorrarId);
+        outState.putString(ESTADO_FILTRO, filtro);
+        outState.putInt(ESTADO_ORDEN, orden);
     }
 }

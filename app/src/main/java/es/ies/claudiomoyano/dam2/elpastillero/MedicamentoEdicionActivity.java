@@ -34,6 +34,8 @@ public class MedicamentoEdicionActivity extends BaseActivity
 
     public static final String EXTRA_ID = "extra_id_medicamento";
     private static final String ESTADO_FECHA = "estado_fecha";
+    private static final String ESTADO_TIPO = "estado_tipo";
+    private static final String ESTADO_PRESENTACION = "estado_presentacion";
 
     private AppDatabase room;
     private DbHelper db;
@@ -82,6 +84,7 @@ public class MedicamentoEdicionActivity extends BaseActivity
 
         if (savedInstanceState != null) {
             fechaMillis = savedInstanceState.getLong(ESTADO_FECHA, System.currentTimeMillis());
+            restaurarSpinners(savedInstanceState);
         }
         txtFechaInicio.setText(FechaUtil.fechaHora(fechaMillis));
 
@@ -164,6 +167,14 @@ public class MedicamentoEdicionActivity extends BaseActivity
 
     /** Carga el spinner de presentaciones según el tipo elegido (spinners encadenados). */
     private void actualizarPresentaciones(int posicionTipo) {
+        // Se conserva la presentación que ya estaba elegida (o la que llega al
+        // cargar un medicamento) para que el cambio de tipo no la pierda.
+        String seleccionada = presentacionPendiente;
+        if (seleccionada == null && spPresentacion.getSelectedItem() != null) {
+            seleccionada = spPresentacion.getSelectedItem().toString();
+        }
+        presentacionPendiente = null;
+
         int array;
         if (posicionTipo == 1) {
             array = R.array.presentaciones_jarabe;
@@ -177,13 +188,26 @@ public class MedicamentoEdicionActivity extends BaseActivity
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spPresentacion.setAdapter(adapter);
 
-        if (presentacionPendiente != null) {
-            int posicion = adapter.getPosition(presentacionPendiente);
+        if (seleccionada != null) {
+            int posicion = adapter.getPosition(seleccionada);
             if (posicion >= 0) {
                 spPresentacion.setSelection(posicion);
             }
-            presentacionPendiente = null;
         }
+    }
+
+    /**
+     * Reaplica el tipo y la presentación tras un giro de pantalla. Se usa
+     * {@code post()} para ejecutarlo cuando Android ya ha restaurado las vistas.
+     */
+    private void restaurarSpinners(Bundle estado) {
+        final int posicionTipo = estado.getInt(ESTADO_TIPO, 0);
+        final String presentacion = estado.getString(ESTADO_PRESENTACION);
+        spTipo.post(() -> {
+            spTipo.setSelection(posicionTipo);
+            presentacionPendiente = presentacion;
+            actualizarPresentaciones(posicionTipo);
+        });
     }
 
     private void cargar(boolean aplicar) {
@@ -360,6 +384,9 @@ public class MedicamentoEdicionActivity extends BaseActivity
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putLong(ESTADO_FECHA, fechaMillis);
+        outState.putInt(ESTADO_TIPO, spTipo.getSelectedItemPosition());
+        Object presentacion = spPresentacion.getSelectedItem();
+        outState.putString(ESTADO_PRESENTACION, presentacion == null ? null : presentacion.toString());
     }
 
     @Override

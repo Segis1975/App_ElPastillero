@@ -6,6 +6,8 @@ usuario, con opciones de accesibilidad.
 
 Proyecto de la 1.ª evaluación de **PMDM** · Curso 2026-27 · IES Claudio Moyano (DAM 2).
 
+**Repositorio:** <https://github.com/Sergio/ElPastillero>
+
 ---
 
 ## 1. Puesta en marcha
@@ -56,6 +58,48 @@ La aplicación tiene **11 actividades** conectadas entre sí:
 11. `AcercaDeActivity` — información, versión y enlace al repositorio.
 
 El detalle de la navegación está en [`docs/navegacion.md`](docs/navegacion.md).
+
+## 3.b Hitos del proyecto
+
+El proyecto se ha construido por partes, siguiendo las prácticas del trimestre:
+
+| Hito | Práctica | Qué se añadió |
+|---|---|---|
+| H1 | P1–P3 | Estructura del proyecto, tema Material 3, recursos e iconos vectoriales |
+| H2 | P4–P5 | Pantallas de login, alta de usuario y resumen con menú lateral |
+| H3 | P6–P7 | Listado con RecyclerView + CardView, ficha y formulario con componentes avanzados |
+| H4 | P8–P9 | CRUD de citas, control de tomas y lista personal por usuario |
+| H5 | P11 | SQLite (`usuarios`, `favoritos`, `citas`) con claves ajenas y CASCADE |
+| H6 | P12 | Room: `Medicamento` 1-N `Toma` con FK y CASCADE, carga inicial de ejemplo |
+| H7 | P13 | Diálogos propios (`DatePicker` + `TimePicker`), ajustes y accesibilidad |
+| H8 | Proyecto | Internacionalización completa, rotación, pruebas y documentación |
+
+Cada hito corresponde a un bloque de trabajo del historial de Git. El historial sirve para
+comprobar la evolución del proyecto, no para puntuar el número de commits.
+
+## 3.c Capturas
+
+Las capturas reales de cada pantalla están en [`docs/capturas/`](docs/capturas/) y se
+incluyen como anexo en los dos manuales en PDF. Se tomaron en un emulador Pixel 9
+(1080 × 2424) con una instalación limpia y la aplicación en español:
+
+| Archivo | Pantalla |
+|---|---|
+| `01_login.png` | Acceso con la cuenta de demostración |
+| `02_login_credenciales.png` | Acceso con las credenciales rellenadas |
+| `03_inicio.png` | Inicio con el resumen del día |
+| `04_menu_lateral.png` | Menú lateral desplegado con la cabecera del usuario |
+| `05_medicamentos.png` | Listado en tarjetas, con búsqueda y ordenación |
+| `06_ficha_medicamento.png` | Ficha de un medicamento y sus tomas |
+| `07_formulario_medicamento.png` | Formulario de edición (parte superior) |
+| `08_formulario_abajo.png` | Formulario de edición (valoración, notas y botones) |
+| `09_dialogo_fecha_hora.png` | `DialogFragment` con `DatePicker` y `TimePicker` |
+| `10_tomas.png` | Control de tomas |
+| `11_citas.png` | Citas médicas |
+| `12_lista_personal.png` | Lista personal del usuario |
+| `13_ajustes.png` | Ajustes de accesibilidad y cuenta |
+| `14_acerca_de.png` | Acerca de, con la URL del repositorio |
+| `15_inicio_ingles.png` | Inicio con la interfaz en inglés (`values-en`) |
 
 ## 4. Trazabilidad con la rúbrica
 
@@ -114,12 +158,19 @@ Todas las claves de `values/strings.xml` existen también en `values-en/strings.
 
 ## 8. Documentación
 
-- [`docs/manual_usuario.md`](docs/manual_usuario.md) — cómo se usa la aplicación paso a paso.
-- [`docs/manual_tecnico.md`](docs/manual_tecnico.md) — arquitectura, decisiones y puntos clave del código.
+- [`docs/manual_usuario.md`](docs/manual_usuario.md) y **[`docs/manual_usuario.pdf`](docs/manual_usuario.pdf)** — cómo se usa la aplicación paso a paso (A4, portada, índice y bibliografía).
+- [`docs/manual_tecnico.md`](docs/manual_tecnico.md) y **[`docs/manual_tecnico.pdf`](docs/manual_tecnico.pdf)** — arquitectura, decisiones y puntos clave del código.
 - [`docs/esquema_bd.md`](docs/esquema_bd.md) — tablas, relaciones y datos iniciales.
 - [`docs/navegacion.md`](docs/navegacion.md) — mapa de pantallas y flujos.
+- [`docs/capturas/`](docs/capturas/) — capturas de todas las pantallas.
 
-## 9. Pendiente antes de entregar
+## 9. Estado de la entrega
 
-- Sustituir la URL de ejemplo `https://github.com/usuario/ElPastillero` en
-  `AcercaDeActivity.java` por la dirección real del repositorio.
+- Compilación verificada con Gradle: `gradlew assembleDebug` → `BUILD SUCCESSFUL`.
+- Las 11 pantallas están conectadas y cada ida tiene vuelta.
+- La carga inicial se comprueba en una instalación limpia (2 usuarios, 6 medicamentos,
+  1 toma, 2 favoritos y 2 citas).
+- Los textos visibles salen de `strings.xml` y `values-en/strings.xml` tiene las mismas
+  185 claves (más dos `plurals` para las unidades).
+- Antes de publicar, cambia `url_repositorio` en
+  `app/src/main/res/values/strings.xml` si tu repositorio final tiene otra dirección.

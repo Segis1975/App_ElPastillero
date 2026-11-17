@@ -17,27 +17,48 @@
             android:layout_height="wrap_content"
             android:text="@string/form_nuevo" />
 
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etNombre"
+            android:text="@string/form_nombre" />
+
         <EditText
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_nombre"
             android:inputType="text"
             android:maxLines="1" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etPrincipio"
+            android:text="@string/form_principio" />
 
         <EditText
             android:id="@+id/etPrincipio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_principio"
             android:inputType="text"
             android:maxLines="1" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etDosis"
+            android:text="@string/form_dosis" />
 
         <EditText
             android:id="@+id/etDosis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_dosis"
             android:inputType="text"
             android:maxLines="1" />
 
@@ -54,27 +75,48 @@
             android:max="9"
             android:progress="0" />
 
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etStock"
+            android:text="@string/form_stock" />
+
         <EditText
             android:id="@+id/etStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_stock"
             android:inputType="number"
             android:maxLines="1" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etStockMinimo"
+            android:text="@string/form_stock_minimo" />
 
         <EditText
             android:id="@+id/etStockMinimo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_stock_minimo"
             android:inputType="number"
             android:maxLines="1" />
+
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etFrecuencia"
+            android:text="@string/form_frecuencia" />
 
         <EditText
             android:id="@+id/etFrecuencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_frecuencia"
             android:inputType="number"
             android:maxLines="1" />
 
@@ -177,11 +219,18 @@
             android:padding="@dimen/margen_pequeno"
             android:textColor="@color/texto_secundario" />
 
+        <TextView
+            style="@style/Estilo.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_pequeno"
+            android:labelFor="@id/etNotas"
+            android:text="@string/form_notas" />
+
         <EditText
             android:id="@+id/etNotas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/form_notas"
             android:inputType="textMultiLine"
             android:minLines="2" />
 

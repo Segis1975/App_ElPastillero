@@ -1,7 +1,14 @@
 # Manual técnico
 
+## Introducción
+
 Documentación de las decisiones de diseño y de los puntos clave del código de
-**El Pastillero**.
+**El Pastillero**, la aplicación Android del proyecto de la 1.ª evaluación de PMDM.
+
+El manual está pensado para que cualquier persona que conozca Java y Android pueda
+entender cómo está organizado el proyecto, dónde está cada pieza y por qué se tomaron
+las decisiones principales: dos bases de datos complementarias, consultas fuera del hilo
+principal, estado conservado al girar la pantalla e internacionalización completa.
 
 ## 1. Arquitectura general
 
@@ -144,21 +151,29 @@ carpeta `values-night/colors.xml`.
 
 | Pantalla | Qué se conserva |
 |---|---|
-| `MedicamentoEdicionActivity` | `fechaMillis` en `onSaveInstanceState`; además evita recargar el formulario si ya hay estado guardado |
+| `MedicamentoEdicionActivity` | `fechaMillis`, el tipo y la presentación de los dos Spinner encadenados; además evita recargar el formulario si ya hay estado guardado |
 | `CitaEdicionActivity` | `fechaHora` en `onSaveInstanceState` |
-| `MedicamentoListActivity` | `id` del medicamento pendiente de borrar |
+| `MedicamentoListActivity` | `id` del medicamento pendiente de borrar, el texto de búsqueda y el criterio de ordenación |
 | `CitaListActivity` | `id` de la cita pendiente de borrar |
 | `ListaPersonalActivity` | `id` del medicamento pendiente de quitar |
 | `AjustesActivity` | Confirmación de borrado de cuenta pendiente |
+| `TomaListActivity` | `id` y cantidad del medicamento elegido mientras está abierto el diálogo de fecha y hora |
+| `DialogFechaHora` | Año, mes, día, hora y minuto seleccionados en los pickers |
 
 Los diálogos se guardan el identificador, no el objeto: tras rotar, la actividad vuelve a
 consultar la base de datos y la operación sigue funcionando.
+
+Los `EditText`, `SeekBar`, `RatingBar`, `RadioButton`, `Switch` y `Spinner` conservan su
+valor automáticamente porque tienen `android:id`. Lo que Android no puede deducir solo
+(la fecha elegida, la presentación del spinner o el medicamento de una toma) se guarda a
+mano en `onSaveInstanceState`.
 
 ## 7. Diálogos
 
 - `DialogFechaHora`: `DialogFragment` con un `DatePicker` y un `TimePicker` en modo
   *spinner*. Devuelve año, mes, día, hora y minuto mediante la interfaz
-  `OnFechaHoraListener`.
+  `OnFechaHoraListener`. Al girar la pantalla conserva la fecha y la hora que el usuario
+  acababa de elegir.
 - `DialogConfirmar`: `DialogFragment` reutilizable con el mensaje y el título recibidos por
   argumentos. La actividad que lo abre implementa `OnConfirmarListener`.
 
@@ -195,7 +210,7 @@ No hay ningún texto literal visible en los layouts: todo pasa por `strings.xml`
 `RadioButton`, `ProgressBar`, `SeekBar`, `RatingBar`, `DatePicker`, `TimePicker`.
 
 **Avanzados**: `RecyclerView` con `CardView`, `NavigationView` + `DrawerLayout`,
-`FloatingActionButton`, `SwitchMaterial`, `SearchView`, `DialogFragment`.
+`MaterialToolbar`, `FloatingActionButton`, `SwitchMaterial`, `SearchView`, `DialogFragment`.
 
 ## 11. Menús
 
@@ -205,6 +220,11 @@ No hay ningún texto literal visible en los layouts: todo pasa por `strings.xml`
   `menu_contextual_medicamento`, `menu_contextual_toma`, `menu_contextual_cita` y
   `menu_contextual_favorito`.
 - **Menú lateral** (`menu_drawer.xml`) con 7 entradas.
+
+La pantalla principal usa `Theme.ElPastillero.SinActionBar` y una `MaterialToolbar`
+propia dentro de `activity_main.xml`. Así la toolbar y el `DrawerLayout` no se solapan:
+el `ActionBarDrawerToggle` se engancha a la toolbar y la cabecera del menú (avatar,
+nombre y correo) se ve completa.
 
 Los adaptadores implementan `View.OnCreateContextMenuListener`; la actividad recoge la
 selección en `onContextItemSelected` y consulta el elemento seleccionado con
@@ -243,13 +263,39 @@ Todos los `Cursor` se cierran en un bloque `finally`.
 
 ## 15. Comprobaciones realizadas
 
+- **Compilación real con Gradle**: `gradlew assembleDebug` termina con
+  `BUILD SUCCESSFUL` (AGP 8.3.2, Gradle 8.4, JDK 17).
 - Las referencias `R.string`, `R.id`, `R.layout`, `R.menu`, `R.drawable`, `R.array`,
   `R.color`, `R.dimen` y `R.style` del código existen en los recursos.
-- Las claves de `values/strings.xml` y `values-en/strings.xml` coinciden.
-- Todas las actividades declaradas en el manifest tienen su clase Java.
-- El código Java compila con `javac` contra el SDK de Android y las bibliotecas de
-  AndroidX/Material.
+- Las 185 claves de `values/strings.xml` y `values-en/strings.xml` coinciden una a una,
+  y los `plurals` de unidades existen en los dos idiomas.
+- Todas las actividades declaradas en el `AndroidManifest.xml` tienen su clase Java.
+- Los 19 layouts y los 11 menús se analizan sin errores.
+- No queda ningún texto visible escrito a mano en los layouts ni en el código Java.
 
-El proyecto no se ha compilado con Gradle dentro de este entorno (a petición del autor);
-la primera sincronización en Android Studio descargará las dependencias indicadas en
-`app/build.gradle`.
+## 16. Bibliografía y webgrafía
+
+- Documentación oficial de Android Developers: <https://developer.android.com/docs>
+- Guía de Room: <https://developer.android.com/training/data-storage/room>
+- Guía de `SQLiteOpenHelper`: <https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper>
+- RecyclerView: <https://developer.android.com/develop/ui/views/layout/recyclerview>
+- Navigation Drawer: <https://developer.android.com/develop/ui/views/navigation/navigation-drawer>
+- `DialogFragment`: <https://developer.android.com/guide/fragments/dialogs>
+- Material Components for Android: <https://m3.material.io/>
+- Documentación de Java 17: <https://docs.oracle.com/en/java/javase/17/docs/api/>
+- Apuntes y prácticas de la asignatura PMDM (IES Claudio Moyano, curso 2026-27).
+
+## 17. Herramientas de IA utilizadas
+
+Para la revisión final del proyecto se ha usado un agente de IA (OpenCode) como apoyo:
+
+- **Qué se pidió**: revisar el proyecto contra el enunciado, detectar huecos y errores,
+  y generar la documentación y los manuales en PDF.
+- **Qué se revisó a mano**: el diseño de las pantallas, las decisiones de base de datos,
+  los datos de ejemplo y todas las pruebas en el emulador.
+- **Qué se corrigió tras la revisión**: el estado de los Spinner al girar la pantalla,
+  la fecha del `DialogFechaHora` al rotar, el medicamento elegido en el alta de tomas,
+  la búsqueda y el orden del listado, y la internacionalización de las credenciales
+  de demostración.
+- **Criterio**: la IA no ha decidido la arquitectura ni los datos; ha servido para
+  localizar defectos concretos y para redactar documentación a partir del código real.

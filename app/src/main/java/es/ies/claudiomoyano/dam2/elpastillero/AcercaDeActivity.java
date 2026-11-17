@@ -15,8 +15,6 @@ import androidx.annotation.NonNull;
  */
 public class AcercaDeActivity extends BaseActivity {
 
-    private static final String REPO_URL = "https://github.com/usuario/ElPastillero";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +29,10 @@ public class AcercaDeActivity extends BaseActivity {
         txtVersion.setText(getString(R.string.acerca_version, BuildConfig.VERSION_NAME));
 
         TextView txtRepo = findViewById(R.id.txtRepo);
+        final String urlRepositorio = getString(R.string.url_repositorio);
         txtRepo.setOnClickListener(v -> {
             try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(REPO_URL)));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlRepositorio)));
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(this, R.string.acerca_no_navegador, Toast.LENGTH_SHORT).show();
             }

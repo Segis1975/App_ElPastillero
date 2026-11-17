@@ -51,8 +51,8 @@ public class LoginActivity extends BaseActivity {
         btnLogin.setOnClickListener(v -> iniciarSesion());
         txtRegistro.setOnClickListener(v -> dialogoRegistro());
         txtDemo.setOnClickListener(v -> {
-            etEmail.setText("sergio@pastillero.es");
-            etPassword.setText("1234");
+            etEmail.setText(getString(R.string.demo_email));
+            etPassword.setText(getString(R.string.demo_password));
         });
     }
 

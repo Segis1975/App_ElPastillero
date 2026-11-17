@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Icono de pastilla: cápsula de dos mitades con colores del tema. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
     <path
-        android:fillColor="#FF000000"
-        android:pathData="M8,7h8a5,5 0 0 1 0,10h-8a5,5 0 0 1 0,-10z" />
+        android:fillColor="@color/verde_primario"
+        android:pathData="M7,7h5v10h-5a5,5 0 0 1 0,-10z" />
     <path
-        android:fillColor="#FFFF8F00"
-        android:pathData="M8,7h4v10h-4a5,5 0 0 1 0,-10z" />
+        android:fillColor="@color/acento"
+        android:pathData="M12,7h5a5,5 0 0 1 0,10h-5z" />
 </vector>
