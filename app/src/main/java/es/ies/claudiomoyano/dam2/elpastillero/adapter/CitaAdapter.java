@@ -1,5 +1,6 @@
 package es.ies.claudiomoyano.dam2.elpastillero.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.ContextMenu;
@@ -40,6 +41,7 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.ViewHolder>
         this.click = click;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setElementos(List<Cita> lista) {
         elementos.clear();
         if (lista != null) {
@@ -54,7 +56,7 @@ public class CitaAdapter extends RecyclerView.Adapter<CitaAdapter.ViewHolder>
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public  ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View vista = LayoutInflater.from(contexto).inflate(R.layout.item_cita, parent, false);
         vista.setOnCreateContextMenuListener(this);
         return new ViewHolder(vista);

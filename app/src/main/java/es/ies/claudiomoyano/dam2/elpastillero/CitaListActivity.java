@@ -11,9 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
-
 import es.ies.claudiomoyano.dam2.elpastillero.adapter.CitaAdapter;
 import es.ies.claudiomoyano.dam2.elpastillero.db.DbHelper;
 import es.ies.claudiomoyano.dam2.elpastillero.dialog.DialogConfirmar;

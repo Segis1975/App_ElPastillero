@@ -57,7 +57,6 @@ public class MedicamentoEdicionActivity extends BaseActivity
     private TextView txtTituloForm;
     private Spinner spTipo;
     private Spinner spPresentacion;
-    private RadioGroup rgEstado;
     private RadioButton rbActivo;
     private RadioButton rbPausado;
     private RadioButton rbFinalizado;
@@ -118,7 +117,7 @@ public class MedicamentoEdicionActivity extends BaseActivity
         txtTituloForm = findViewById(R.id.txtTituloForm);
         spTipo = findViewById(R.id.spTipo);
         spPresentacion = findViewById(R.id.spPresentacion);
-        rgEstado = findViewById(R.id.rgEstado);
+        RadioGroup rgEstado = findViewById(R.id.rgEstado);
         rbActivo = findViewById(R.id.rbActivo);
         rbPausado = findViewById(R.id.rbPausado);
         rbFinalizado = findViewById(R.id.rbFinalizado);

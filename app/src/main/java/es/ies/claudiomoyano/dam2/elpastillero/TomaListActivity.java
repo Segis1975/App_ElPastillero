@@ -13,8 +13,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.List;
-
 import es.ies.claudiomoyano.dam2.elpastillero.adapter.TomaAdapter;
 import es.ies.claudiomoyano.dam2.elpastillero.data.AppDatabase;
 import es.ies.claudiomoyano.dam2.elpastillero.data.Medicamento;

@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import es.ies.claudiomoyano.dam2.elpastillero.db.DbHelper;
-import es.ies.claudiomoyano.dam2.elpastillero.model.Usuario;
 
 /**
  * Pantalla de entrada. Valida el correo y la contraseña contra la tabla de

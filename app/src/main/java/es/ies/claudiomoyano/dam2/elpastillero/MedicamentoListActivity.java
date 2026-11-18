@@ -108,7 +108,7 @@ public class MedicamentoListActivity extends BaseActivity
     private void ordenarYMostrar() {
         Comparator<Medicamento> comparador;
         if (orden == ORDEN_STOCK) {
-            comparador = (a, b) -> Integer.compare(a.stock, b.stock);
+            comparador = Comparator.comparingInt(a -> a.stock);
         } else if (orden == ORDEN_VALORACION) {
             comparador = (a, b) -> Integer.compare(b.valoracion, a.valoracion);
         } else {
@@ -138,6 +138,7 @@ public class MedicamentoListActivity extends BaseActivity
         MenuItem buscar = menu.findItem(R.id.action_buscar);
         if (buscar != null) {
             SearchView searchView = (SearchView) buscar.getActionView();
+            assert searchView != null;
             searchView.setQueryHint(getString(R.string.med_buscar));
             // Al girar, la caja de búsqueda vuelve a mostrar el filtro activo.
             if (!filtro.isEmpty()) {

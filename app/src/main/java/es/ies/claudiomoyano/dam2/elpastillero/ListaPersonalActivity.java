@@ -2,7 +2,6 @@ package es.ies.claudiomoyano.dam2.elpastillero;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,9 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
-
 import es.ies.claudiomoyano.dam2.elpastillero.adapter.FavoritoAdapter;
 import es.ies.claudiomoyano.dam2.elpastillero.data.AppDatabase;
 import es.ies.claudiomoyano.dam2.elpastillero.data.Medicamento;

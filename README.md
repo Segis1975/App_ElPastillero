@@ -23,8 +23,8 @@ Proyecto de la 1.ª evaluación de **PMDM** · Curso 2026-27 · IES Claudio Moya
 | `compileSdk` / `targetSdk` | 34 |
 | `minSdk` | 26 |
 | Java | 17 |
-| Gradle | 8.4 |
-| Android Gradle Plugin | 8.3.2 |
+| Gradle | 9.6.0 |
+| Android Gradle Plugin | 9.4.1 |
 
 > `local.properties` contiene la ruta del SDK de este equipo. Si abres el proyecto en
 > otro ordenador, Android Studio la regenerará automáticamente.

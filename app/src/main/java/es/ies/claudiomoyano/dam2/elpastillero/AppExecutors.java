@@ -40,7 +40,4 @@ public final class AppExecutors {
         });
     }
 
-    public static void main(Runnable tarea) {
-        MAIN.post(tarea);
-    }
 }

@@ -264,7 +264,7 @@ Todos los `Cursor` se cierran en un bloque `finally`.
 ## 15. Comprobaciones realizadas
 
 - **Compilación real con Gradle**: `gradlew assembleDebug` termina con
-  `BUILD SUCCESSFUL` (AGP 8.3.2, Gradle 8.4, JDK 17).
+  `BUILD SUCCESSFUL` (AGP 9.4.1, Gradle 9.6.0, JDK 17).
 - Las referencias `R.string`, `R.id`, `R.layout`, `R.menu`, `R.drawable`, `R.array`,
   `R.color`, `R.dimen` y `R.style` del código existen en los recursos.
 - Las 185 claves de `values/strings.xml` y `values-en/strings.xml` coinciden una a una,
