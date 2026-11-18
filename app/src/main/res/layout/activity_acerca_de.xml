@@ -17,7 +17,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:contentDescription="@string/cd_logo"
-            android:src="@drawable/ic_pill" />
+            android:src="@drawable/icono" />
 
         <TextView
             style="@style/Estilo.Titulo"

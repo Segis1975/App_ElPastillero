@@ -6,7 +6,7 @@ usuario, con opciones de accesibilidad.
 
 Proyecto de la 1.ª evaluación de **PMDM** · Curso 2026-27 · IES Claudio Moyano (DAM 2).
 
-**Repositorio:** <https://github.com/Sergio/ElPastillero>
+**Repositorio:** <https://github.com/Segis1975/App_ElPastillero>
 
 ---
 

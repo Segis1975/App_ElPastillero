@@ -219,7 +219,7 @@
     <string name="acerca_autor">Desarrollado por Sergio · IES Claudio Moyano · DAM 2</string>
     <string name="acerca_repo">Repositorio del proyecto en GitHub</string>
     <!-- URL única del repositorio: se cambia solo aquí, sin tocar el código Java. -->
-    <string name="url_repositorio">https://github.com/Sergio/ElPastillero</string>
+    <string name="url_repositorio">https://github.com/Segis1975/App_ElPastillero</string>
     <string name="acerca_tecnologias">Tecnologías: Java, Android, SQLite, Room y Material Components</string>
     <string name="acerca_manual">Manual de usuario y manual técnico incluidos en la carpeta docs del repositorio.</string>
     <string name="acerca_no_navegador">No hay ninguna aplicación de navegador disponible</string>
