@@ -172,5 +172,5 @@ Todas las claves de `values/strings.xml` existen también en `values-en/strings.
   1 toma, 2 favoritos y 2 citas).
 - Los textos visibles salen de `strings.xml` y `values-en/strings.xml` tiene las mismas
   185 claves (más dos `plurals` para las unidades).
-- Antes de publicar, cambia `url_repositorio` en
-  `app/src/main/res/values/strings.xml` si tu repositorio final tiene otra dirección.
+- El enlace del repositorio está en `url_repositorio` y apunta a
+  <https://github.com/Segis1975/App_ElPastillero>.
