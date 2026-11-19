@@ -8,13 +8,10 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import es.ies.claudiomoyano.dam2.elpastillero.FechaUtil;
 import es.ies.claudiomoyano.dam2.elpastillero.R;
 import es.ies.claudiomoyano.dam2.elpastillero.model.Favorito;
